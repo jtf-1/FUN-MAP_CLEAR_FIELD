@@ -19,7 +19,7 @@ if ( GameMode == 0 ) then
 	--////CARRIER GROUP RECOVERY TANKER
 	tankerStennis=RECOVERYTANKER:New("CVN-74 John C. Stennis", "SQ BLUE S-3B")
 	tankerStennis:SetTakeoffAir()
-	tankerStennis:SetRadio(238)
+	tankerStennis:SetRadio(276.1)
 	tankerStennis:SetTACAN(38, "ARC")
 	tankerStennis:SetCallsign(CALLSIGN.Tanker.Arco)
 	tankerStennis:SetModex(380)
