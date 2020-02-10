@@ -53,7 +53,7 @@ Be Advised Bullseye Calls Are Referencing Zugdidi
 MISCELLANEOUS
 =============
 
-Operation Clear Field is a persistent, open world PvE playground for the Caucasus Gulf map. The mission will randomly choose targets throughout the map. You can fly any role you like, and if you are on your own, you can use the radio menu to request support flights of AI planes to assist you. Most modules have been included. You will be flying against Russian forces.
+Operation Clear Field is a persistent, open world PvE playground for the Caucasus map.It is loosely based on the Russo-Georgian war of 2008. This mission uses the same mechanics that Operation Snowfox uses for the Persian Gulf map. The mission will randomly choose targets throughout the map. You can fly any role you like, and if you are on your own, you can use the radio menu to request support flights of AI planes to assist you. Most modules have been included. You will be flying against the Russians.
 
 Requesting support flights:
 --------------------------
