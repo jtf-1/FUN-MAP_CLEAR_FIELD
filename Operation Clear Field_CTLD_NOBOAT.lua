@@ -1960,7 +1960,7 @@ end
 		SEF_BLUEAwacsSpawn()
 		SEF_BLUETexacoSpawn()
 		SEF_BLUEShellSpawn()
-		SEF_CarrierDefenceZone()
+		--SEF_CarrierDefenceZone()
 		
 		--////SCHEDULERS
 		--AI FLIGHT PUSH FLAGS		
@@ -1970,7 +1970,7 @@ end
 		--RED BOMBER ATTACKS - WAIT 10-15 MINUTES BEFORE STARTING
 		timer.scheduleFunction(SEF_RedBomberScheduler, 53, timer.getTime() + math.random(600, 900))
 		--CARRIER DEFENCE ZONE SCANNER - WAIT 5 MINUTES BEFORE STARTING
-		timer.scheduleFunction(SEF_CarrierDefenceZoneScanner, 53, timer.getTime() + 300)	
+		--timer.scheduleFunction(SEF_CarrierDefenceZoneScanner, 53, timer.getTime() + 300)	
 	
 --////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
