@@ -11,12 +11,14 @@
 function SEF_BLUEDISPATCHERON()
 	--BLUE AIR DISPATCHER
 	BLUEDetectionSetGroup = SET_GROUP:New()
-	BLUEDetectionSetGroup:FilterPrefixes( { "DF BLUE EWR", "RT AWACS BLUE#" } ) 
+	BLUEDetectionSetGroup:FilterPrefixes( { "DF BLUE EWR", "BLUE SAM", "RT AWACS BLUE#" } ) 
 	BLUEDetectionSetGroup:FilterStart()
 	BLUEDetection = DETECTION_AREAS:New( BLUEDetectionSetGroup, 30000 )
 	BLUEA2ADispatcher = AI_A2A_DISPATCHER:New( BLUEDetection )
 	BLUEA2ADispatcher:SetTacticalDisplay( false )
-			
+	--BlueBorderZone = ZONE_POLYGON:New( "BLUE Border", GROUP:FindByName( "BLUE Border" ) )
+	--BLUEA2ADispatcher:SetBorderZone( BlueBorderZone )
+		
 	BLUEA2ADispatcher:SetDefaultFuelThreshold( 0.15 )
 	--BLUEA2ADispatcher:SetDefaultDamageThreshold( 0.60 )
 	BLUEA2ADispatcher:SetDefaultCapLimit( 1 )
@@ -124,6 +126,7 @@ end
 function SEF_REDDISPATCHERON()
 
 	REDDetectionSetGroup = SET_GROUP:New()	
+	--REDDetectionSetGroup:FilterPrefixes( { "DF RED EWR" } )
 	REDDetectionSetGroup:FilterPrefixes( { "SQ RUS", "RT RED" } )	
 	REDDetectionSetGroup:FilterActive()
 	REDDetectionSetGroup:FilterStart()
@@ -136,12 +139,11 @@ function SEF_REDDISPATCHERON()
 	REDA2ADispatcher:SetDefaultFuelThreshold( 0.15 )
 	--REDA2ADispatcher:SetDefaultDamageThreshold( 0.60 )
 	REDA2ADispatcher:SetDefaultCapLimit( 1 )
-	REDA2ADispatcher:SetDefaultTakeoffInAirAltitude(3000)
+	REDA2ADispatcher:SetDefaultTakeoffInAirAltitude(500) --3000
 
-	REDA2ADispatcher:SetEngageRadius( 200000 )	
+	REDA2ADispatcher:SetEngageRadius( 200000 )
+	REDA2ADispatcher:SetGciRadius( 200000 )
 	REDA2ADispatcher:SetDisengageRadius( 260000 )
-	
-	--trigger.action.outText("Red Air Dispatcher Is Now Enabled", 15)
 end
 
 function SEF_REDSQUADRONSMULTIPLAYER()
@@ -189,12 +191,12 @@ function SEF_REDSQUADRONSMULTIPLAYER()
 
 	--////RED Squadron Planned Execution
 	--
-	-- ZONE 1 Gudauta 			- Alpha
-	-- ZONE 2 Nalchik 			- Beta
-	-- ZONE 3 Beslan  			- Gamma
-	-- ZONE 4 Sochi   			- Delta
-	-- ZONE 5 Kuznetsov 		- Theta
-	-- ZONE 6 Mineralnye-Vody 	- Omicron
+	-- ZONE 1 Gudauta 		- Alpha
+	-- ZONE 2 Nalchik 		- Beta
+	-- ZONE 3 Beslan  		- Gamma
+	-- ZONE 4 Sochi   		- Delta
+	-- ZONE 5 Kuznetsov 	- Theta
+	-- GCI 			  		- Omicron
 
 	-- ////CAP Squadrons
 	-- Guaduta - Zone 1
@@ -207,8 +209,9 @@ function SEF_REDSQUADRONSMULTIPLAYER()
 	REDA2ADispatcher:SetSquadron( "Delta", AIRBASE.Caucasus.Sochi_Adler, { "SQ RUS Su-27", "SQ RUS Su-30", "SQ RUS MiG-29A", "SQ RUS MiG-29S", "SQ RUS MiG-21Bis", "SQ RUS MiG-23MLD", "SQ RUS MiG-25PD" } )
 	--Admiral Kuznetsov
 	REDA2ADispatcher:SetSquadron( "Theta", "CV 1143.5 Admiral Kuznetsov", { "SQ RUS Su-33 Kuznetsov" } )
-	-- Mineralnye-Vody - Zone 6
-	REDA2ADispatcher:SetSquadron( "Omicron", AIRBASE.Caucasus.Mineralnye_Vody, { "SQ RUS MiG-31", "SQ RUS MiG-25PD", "SQ RUS MiG-21Bis", "SQ RUS Su-27", "SQ RUS Su-30", "SQ RUS MiG-29A", "SQ RUS MiG-29S", "SQ RUS MiG-23MLD" } )
+	-- ////GCI Squadrons
+	-- Mozdok
+	REDA2ADispatcher:SetSquadron( "Omicron", AIRBASE.Caucasus.Mozdok, { "SQ RUS MiG-31", "SQ RUS MiG-25PD", "SQ RUS MiG-21Bis" } )
 
 
 	--////SQUADRON OVERHEAD (1.0-1.5)
@@ -266,14 +269,13 @@ function SEF_REDSQUADRONSMULTIPLAYER()
 	CAPZoneRed4 = ZONE:New( "CAP Zone RED 4" )
 	--CAPZoneRed5 = ZONE:New( "CAP Zone RED Kuznetsov" )
 	CAPZoneRedCarrier = ZONE_GROUP:New("CAP Zone Black Sea Fleet", GROUP:FindByName( "CV 1143.5 Admiral Kuznetsov" ), 75000)
-	CAPZoneRed6 = ZONE_POLYGON:New( "CAP Zone RED 6", GROUP:FindByName( "CAP Zone RED 6" ) )
 
-	-- ZONE 1 Gudauta 			- Alpha
-	-- ZONE 2 Nalchik 			- Beta
-	-- ZONE 3 Beslan  			- Gamma
-	-- ZONE 4 Sochi   			- Delta
-	-- ZONE 5 Kuznetsov 	  	- Theta
-	-- ZONE 6 Mineralnye-Vody 	- Omicron
+	-- ZONE 1 Gudauta 		- Alpha
+	-- ZONE 2 Nalchik 		- Beta
+	-- ZONE 3 Beslan  		- Gamma
+	-- ZONE 4 Sochi   		- Delta
+	-- ZONE 5 Kuznetsov 	- Theta
+	-- GCI 			  		- Omicron
 	
 	--Timing Originally 300/750
 
@@ -292,9 +294,8 @@ function SEF_REDSQUADRONSMULTIPLAYER()
 	--ZONE 5 / Theta / Admiral Kuznetsov
 	REDA2ADispatcher:SetSquadronCap( "Theta", CAPZoneRedCarrier, 1000, 11000, 750, 900, 800, 1200, "BARO" )
 	REDA2ADispatcher:SetSquadronCapInterval( "Theta", 1, 450, 900, 1 )
-	--ZONE 6 / Omicron / Mineralnye-Vody
-	REDA2ADispatcher:SetSquadronCap( "Omicron", CAPZoneRed6, 4000, 11000, 750, 900, 800, 1200, "BARO" )
-	REDA2ADispatcher:SetSquadronCapInterval( "Omicron", 1, 450, 900, 1 )	
+	-- GCI Squadron execution. //function AI_A2A_DISPATCHER:SetSquadronGci( SquadronName, EngageMinSpeed, EngageMaxSpeed )
+	REDA2ADispatcher:SetSquadronGci( "Omicron", 900, 1200 )
 end
 
 function SEF_REDSQUADRONSSINGLEPLAYER()
@@ -342,12 +343,12 @@ function SEF_REDSQUADRONSSINGLEPLAYER()
 
 	--////RED Squadron Planned Execution
 	--
-	-- ZONE 1 Gudauta 			- Alpha
-	-- ZONE 2 Nalchik 			- Beta
-	-- ZONE 3 Beslan  			- Gamma
-	-- ZONE 4 Sochi   			- Delta
-	-- ZONE 5 Kuznetsov 		- Theta
-	-- ZONE 6 Mineralnye-Vody 	- Omicron
+	-- ZONE 1 Gudauta 		- Alpha
+	-- ZONE 2 Nalchik 		- Beta
+	-- ZONE 3 Beslan  		- Gamma
+	-- ZONE 4 Sochi   		- Delta
+	-- ZONE 5 Kuznetsov 	- Theta
+	-- GCI 			  		- Omicron
 
 	-- ////CAP Squadrons
 	-- Guaduta - Zone 1
@@ -360,9 +361,9 @@ function SEF_REDSQUADRONSSINGLEPLAYER()
 	REDA2ADispatcher:SetSquadron( "Delta", AIRBASE.Caucasus.Sochi_Adler, { "SQ RUS Su-27", "SQ RUS Su-30", "SQ RUS MiG-29A", "SQ RUS MiG-29S", "SQ RUS MiG-21Bis", "SQ RUS MiG-23MLD", "SQ RUS MiG-25PD" } )
 	--Admiral Kuznetsov
 	REDA2ADispatcher:SetSquadron( "Theta", "CV 1143.5 Admiral Kuznetsov", { "SQ RUS Su-33 Kuznetsov" } )
-	-- Mineralnye-Vody - Zone 6
-	REDA2ADispatcher:SetSquadron( "Omicron", AIRBASE.Caucasus.Mineralnye_Vody, { "SQ RUS MiG-31", "SQ RUS MiG-25PD", "SQ RUS MiG-21Bis", "SQ RUS Su-27", "SQ RUS Su-30", "SQ RUS MiG-29A", "SQ RUS MiG-29S", "SQ RUS MiG-23MLD" } )
-
+	-- ////GCI Squadrons
+	-- Mozdok
+	REDA2ADispatcher:SetSquadron( "Omicron", AIRBASE.Caucasus.Mozdok, { "SQ RUS MiG-31", "SQ RUS MiG-25PD", "SQ RUS MiG-21Bis" } )
 
 
 	--////SQUADRON OVERHEAD (1.0-1.5)
@@ -420,14 +421,13 @@ function SEF_REDSQUADRONSSINGLEPLAYER()
 	CAPZoneRed4 = ZONE:New( "CAP Zone RED 4" )
 	--CAPZoneRed5 = ZONE:New( "CAP Zone RED Kuznetsov" )
 	CAPZoneRedCarrier = ZONE_GROUP:New("CAP Zone Black Sea Fleet", GROUP:FindByName( "CV 1143.5 Admiral Kuznetsov" ), 75000)
-	CAPZoneRed6 = ZONE_POLYGON:New( "CAP Zone RED 6", GROUP:FindByName( "CAP Zone RED 6" ) )
 
-	-- ZONE 1 Gudauta 			- Alpha
-	-- ZONE 2 Nalchik 			- Beta
-	-- ZONE 3 Beslan  			- Gamma
-	-- ZONE 4 Sochi   			- Delta
-	-- ZONE 5 Kuznetsov 		- Theta
-	-- ZONE 6 Mineralnye-Vody 	- Omicron
+	-- ZONE 1 Gudauta 		- Alpha
+	-- ZONE 2 Nalchik 		- Beta
+	-- ZONE 3 Beslan  		- Gamma
+	-- ZONE 4 Sochi   		- Delta
+	-- ZONE 5 Kuznetsov 	- Theta
+	-- GCI 			  		- Omicron
 
 	--ZONE 1 / Alpha / Gudauta
 	REDA2ADispatcher:SetSquadronCap( "Alpha", CAPZoneRed1, 1000, 11000, 750, 900, 800, 1200, "BARO" )
@@ -444,10 +444,8 @@ function SEF_REDSQUADRONSSINGLEPLAYER()
 	--ZONE 5 / Theta / Admiral Kuznetsov
 	REDA2ADispatcher:SetSquadronCap( "Theta", CAPZoneRedCarrier, 1000, 11000, 750, 900, 800, 1200, "BARO" )
 	REDA2ADispatcher:SetSquadronCapInterval( "Theta", 1, 300, 900, 1 )
-	--ZONE 6 / Omicron / Mineralnye-Vody
-	REDA2ADispatcher:SetSquadronCap( "Omicron", CAPZoneRed6, 4000, 11000, 750, 900, 800, 1200, "BARO" )
-	REDA2ADispatcher:SetSquadronCapInterval( "Omicron", 1, 300, 900, 1 )
-	
+	-- GCI Squadron execution. //function AI_A2A_DISPATCHER:SetSquadronGci( SquadronName, EngageMinSpeed, EngageMaxSpeed )
+	REDA2ADispatcher:SetSquadronGci( "Omicron", 900, 1200 )
 end
 
 function SEF_CleanUpAirports()
@@ -456,7 +454,6 @@ function SEF_CleanUpAirports()
 											 AIRBASE.Caucasus.Beslan,											  
 											 AIRBASE.Caucasus.Sochi_Adler,											  
 											 AIRBASE.Caucasus.Mozdok,
-											 AIRBASE.Caucasus.Mineralnye_Vody,
 											 
 											 AIRBASE.Caucasus.Kutaisi,
 											 AIRBASE.Caucasus.Senaki_Kolkhi,
@@ -466,12 +463,7 @@ end
 
 function SEF_BLUEDEFENCENETWORK()
 	--////ADD TO DEFENCE NETWORK
-	BLUEDetectionSetGroup:AddGroupsByName( { 	"CVN-74 John C. Stennis",
-												"Georgian Fleet",
-												"Senaki Kolkhi - SA-11",
-												"Poti - SA-3",
-												"Tbilisi Lochini - SA-3"
-											} )
+	BLUEDetectionSetGroup:AddGroupsByName( { "CVN-74 John C. Stennis", "Georgian Fleet" } )
 	
 	--////REMOVE FROM DEFENCE NETWORK
 	--BLUEDetectionSetGroup:RemoveGroupsByName( { "RT AWACS BLUE" } )
@@ -483,41 +475,10 @@ function SEF_REDDEFENCENETWORK()
 
 	--////CREATE MASTER LIST THEN LOOP THROUGH THE ALIVE UNITS AND ADD TO RED DEFENCE NETWORK
 	REDDefenceNetworkGroup = SET_GROUP:New()
-	REDDefenceNetworkGroup:FilterPrefixes( { 	"DF RED EWR",	
-												"Sochi - EWR Veseloe",
-												"Gudauta - EWR Gudauta 1",
-												"Gudauta - EWR Gudauta 2",
-												"Sukhumi - EWR Kvemo-Merheuli",
-												"Sukhumi - EWR Sukhumi",												
-												"Anapskaya - SA-10",
-												"Gudauta - SA-10",
-												"Novorossiysk - SA-10",
-												"Sochi - SA-11",
-												"Sukhumi - SA-10",
-												"Utash - SA-3",
-												"Kambileyevskoye - SA-2",
-												"Kirovo - SA-2",
-												"Digora - SA-2",
-												"Zaragizh - SA-2",
-												"Islamey - SA-2",		
-												"CV 1143.5 Admiral Kuznetsov",
-												"Gudauta - Navy 1",
-												"Ochamchira - Navy 1",
-												"Sochi - Navy 1",
-												"Sukhumi - Navy 1",
-												"Kvemo Roka - SAM 1",
-												"Gori - SAM 1",
-												"Gori - SAM 2",
-												"Gudauta - SAM 1",
-												"Ochamchira - SAM 1",
-												"Sukhumi - SAM 1",
-												"Sukhumi - SAM 2",
-												"Tkvarcheli - SAM 1",
-												"Tskhinvali - SAM 1",
-												"Tskhinvali - SAM 2",
-												"Zemo Azhara - SAM 1",
-												"Zugdidi - SAM 1",
-												"Zugdidi - SAM 2" } )	
+	REDDefenceNetworkGroup:FilterPrefixes( { "DF RED EWR", "RED SAM", "CV 1143.5 Admiral Kuznetsov", "Gudauta - Navy 1", "Ochamchira - Navy 1", 
+										   "Sochi - Navy 1", "Sukhumi - Navy 1", "Kvemo-Roka - SAM 1", "Gori - SAM 1", "Gori - SAM 2", "Gudauta - SAM 1", 
+										   "Ochamchira - SAM 1", "Sukhumi - SAM 1", "Sukhumi - SAM 2", "Tkvarcheli - SAM 1", "Tskhinvali - SAM 1", "Tskhinvali - SAM 2", 
+										   "Zemo-Azhara - SAM 1", "Zugdidi - SAM 1", "Zugdidi - SAM 2" } )	
 	REDDefenceNetworkGroup:FilterOnce()
 	
 	REDDefenceNetworkGroup:ForEachGroupAlive(
@@ -533,7 +494,8 @@ end
 ----------------------------------------------------------------------------------------------------------------------------------------------
 
 	--////MAIN
-			
+	trigger.action.outSound('Background Chatter.ogg')	
+		
 	--////GET THE GAME MODE SETUP (FLAG 10000 IN MISSION EDITOR TRIGGERS, 0 FOR MULTIPLAYER, 1 FOR SINGLEPLAYER)
 	GameMode = trigger.misc.getUserFlag(10000)	
 	

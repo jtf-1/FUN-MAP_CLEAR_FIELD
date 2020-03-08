@@ -44,50 +44,40 @@ function SET_RTREDBLUELAND:OnEventLand(EventData)
 	elseif string.find(RTREDBLUEPLANEGROUP, "RT AWACS") then
 		trigger.action.outText("An " .. RTREDBLUETYPE .. " Has Landed At " .. RTREDBLUEPLACENAME,15)
 		Unit.getByName(RTREDBLUEPLANEUNIT):destroy()
-		timer.scheduleFunction(SEF_BLUEAwacsSpawn, {}, timer.getTime() + 10)	
+		SEF_BLUEAwacsSpawn()	
 	elseif string.find(RTREDBLUEPLANEGROUP, "RT TEXACO") then
 		trigger.action.outText("An " .. RTREDBLUETYPE .. " Has Landed At " .. RTREDBLUEPLACENAME,15)
 		Unit.getByName(RTREDBLUEPLANEUNIT):destroy()
-		timer.scheduleFunction(SEF_BLUETexacoSpawn, {}, timer.getTime() + 10)
+		SEF_BLUETexacoSpawn()
 	elseif string.find(RTREDBLUEPLANEGROUP, "RT SHELL") then
 		trigger.action.outText("An " .. RTREDBLUETYPE .. " Has Landed At " .. RTREDBLUEPLACENAME,15)
 		Unit.getByName(RTREDBLUEPLANEUNIT):destroy()
-		timer.scheduleFunction(SEF_BLUEShellSpawn, {}, timer.getTime() + 10)
+		SEF_BLUEShellSpawn()
 	else
 	end	
 end
 
-function SET_DEATHWATCH:OnEventCrash(EventData)	
+function SET_DEATHWATCH:OnEventCrash(EventData)
 	local CrashedUnitCoalition = EventData.IniCoalition
 	local CrashedUnitType = EventData.IniTypeName
-	local CrashedUnitPlaneGroup = EventData.IniDCSGroupName
-	
+		
 	if ( CrashedUnitCoalition == 1 and CrashedUnitType == 'MiG-21Bis' ) then			-- Enemy MiG-21Bis Down
 		trigger.action.outText("A " .. CrashedUnitType .. " Has Been Destroyed!",15)
 		local RandomMigSound = math.random(1,2)
 		if (RandomMigSound == 1) then 
-			--trigger.action.outSound('mig21splash-1.ogg')
+			trigger.action.outSound('mig21splash-1.ogg')
 		else
-			--trigger.action.outSound('mig21splash-2.ogg')
+			trigger.action.outSound('mig21splash-2.ogg')
 		end		
 	elseif ( CrashedUnitCoalition == 1 and CrashedUnitType ~= 'MiG-21Bis' ) then		-- Enemy Non-MiG Down
 		trigger.action.outText("A " .. CrashedUnitType .. " Has Been Destroyed!",15)
 		local RandomAAKillSound = math.random(1,6)
-		--trigger.action.outSound('AA Kill ' .. RandomAAKillSound .. '.ogg')				
+		trigger.action.outSound('AA Kill ' .. RandomAAKillSound .. '.ogg')				
 	elseif ( CrashedUnitCoalition == 2 ) then 											-- Allied Plane Down
 		trigger.action.outText("A " .. CrashedUnitType .. " Has Been Destroyed!",15)
 		timer.scheduleFunction(FriendlyDownSound, {}, timer.getTime() + 1)		
-	
-		--Respawn AWACS and Tankers
-		if string.find(CrashedUnitPlaneGroup, "RT AWACS") then
-			timer.scheduleFunction(SEF_BLUEAwacsSpawn, {}, timer.getTime() + 10)				
-		elseif string.find(CrashedUnitPlaneGroup, "RT TEXACO") then
-			timer.scheduleFunction(SEF_BLUETexacoSpawn, {}, timer.getTime() + 10)			
-		elseif string.find(CrashedUnitPlaneGroup, "RT SHELL") then			
-			timer.scheduleFunction(SEF_BLUEShellSpawn, {}, timer.getTime() + 10)			
-		else
-		end	
-	else		
+	else
+		--Do nothing
 	end		
 end
 
@@ -233,7 +223,7 @@ function SET_BLUEFIRE:OnEventShot(EventData)
 				
 				if ( timer.getAbsTime() >= SoundLockout + 7 ) then
 					local RandomSAMSound = math.random(1,6)
-					--trigger.action.outSound('SAM ' .. RandomSAMSound .. '.ogg')			
+					trigger.action.outSound('SAM ' .. RandomSAMSound .. '.ogg')			
 					SoundLockout = timer.getAbsTime()
 				else
 				end				

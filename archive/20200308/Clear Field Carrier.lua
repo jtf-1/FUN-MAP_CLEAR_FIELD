@@ -27,7 +27,7 @@ if ( GameMode == 0 ) then
 	tankerStennis:SetModex(380)
 	tankerStennis:SetAltitude(6000)
 	tankerStennis:SetSpeed(336) -- 336kt TAS = 300IAS @ 6000ft. 347.2kt TAS = 310kt IAS @ 6000ft
-	tankerStennis:Start()
+	--tankerStennis:Start()
 
 	--Set Immortal/Invis since it doesn't inherit it
 	SEF_RecoveryTanker = Unit.getByName(tankerStennis:GetUnitName())
@@ -40,7 +40,7 @@ if ( GameMode == 0 ) then
 	heloStennis=RESCUEHELO:New("CVN-74 John C. Stennis", "SQ BLUE CH-53E")
 	heloStennis:SetTakeoffAir()
 	heloStennis:SetModex(530)
-	heloStennis:Start()
+	--heloStennis:Start()
 
 	--Set Immortal/Invisible since it doesn't inherit it
 	SEF_RescueHelo = Unit.getByName(heloStennis:GetUnitName())
@@ -60,7 +60,7 @@ else
 	tankerStennis:SetModex(380)
 	tankerStennis:SetAltitude(6000)
 	tankerStennis:SetSpeed(336) -- 336kt TAS = 300IAS @ 6000ft. 347.2kt TAS = 310kt IAS @ 6000ft
-	tankerStennis:Start()
+	--tankerStennis:Start()
 
 	--Set Immortal/Invis since it doesn't inherit it
 	SEF_RecoveryTanker = Unit.getByName(tankerStennis:GetUnitName())
@@ -72,7 +72,7 @@ else
 	--////CARRIER GROUP RESCUE HELO
 	heloStennis=RESCUEHELO:New("CVN-74 John C. Stennis", "SQ BLUE CH-53E")
 	heloStennis:SetModex(530)
-	heloStennis:Start()
+	--heloStennis:Start()
 
 	--Set Immortal/Invisible since it doesn't inherit it
 	SEF_RescueHelo = Unit.getByName(heloStennis:GetUnitName())

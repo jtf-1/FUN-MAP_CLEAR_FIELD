@@ -109,17 +109,11 @@ if file_exists("ClearFieldUnitInterment.lua") then
 	dofile("ClearFieldUnitInterment.lua")
 	
 	UnitIntermentTableLength = SEF_GetTableLength(ClearFieldUnitInterment)
-	--trigger.action.outText("Unit Table Length Is "..UnitIntermentTableLength, 15)
 		
 	for i = 1, UnitIntermentTableLength do
 		--trigger.action.outText("Unit Interment Element "..i.." Is "..ClearFieldUnitInterment[i], 15)		
-		
-		if ( Unit.getByName(ClearFieldUnitInterment[i]) ~= nil ) then
-			Unit.getByName(ClearFieldUnitInterment[i]):destroy()
-			SEFDeletedUnitCount = SEFDeletedUnitCount + 1
-		else
-			trigger.action.outText("Unit Interment Element "..i.." Is "..ClearFieldUnitInterment[i].." And Was Not Found", 15)
-		end				
+		Unit.getByName(ClearFieldUnitInterment[i]):destroy()
+		SEFDeletedUnitCount = SEFDeletedUnitCount + 1		
 	end
 else
 	DeadUnitsList = SET_UNIT:New():FilterCoalitions("red"):FilterCategories("ground"):FilterActive(true):FilterStart()
@@ -133,17 +127,10 @@ if file_exists("ClearFieldStaticInterment.lua") then
 	dofile("ClearFieldStaticInterment.lua")
 		
 	StaticIntermentTableLength = SEF_GetTableLength(ClearFieldStaticInterment)
-	--trigger.action.outText("Static Table Length Is "..StaticIntermentTableLength, 15)
 	
 	for i = 1, StaticIntermentTableLength do		
-		--trigger.action.outText("Static Interment Element "..i.." Is "..ClearFieldStaticInterment[i], 15)
-		
-		if ( StaticObject.getByName(ClearFieldStaticInterment[i]) ~= nil ) then		
-			StaticObject.getByName(ClearFieldStaticInterment[i]):destroy()		
-			SEFDeletedStaticCount = SEFDeletedStaticCount + 1
-		else
-			trigger.action.outText("Static Interment Element "..i.." Is "..ClearFieldStaticInterment[i].." And Was Not Found", 15)
-		end		
+		StaticObject.getByName(ClearFieldStaticInterment[i]):destroy()		
+		SEFDeletedStaticCount = SEFDeletedStaticCount + 1
 	end
 else
 	ClearFieldStaticInterment = {}
