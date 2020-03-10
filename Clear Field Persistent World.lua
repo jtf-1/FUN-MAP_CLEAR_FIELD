@@ -102,78 +102,80 @@ SEFDeletedUnitCount = 0
 SEFDeletedStaticCount = 0
 
 --////LOAD UNITS
-if file_exists("ClearFieldUnitInterment.lua") then
-	DeadUnitsList = SET_UNIT:New():FilterCoalitions("red"):FilterCategories("ground"):FilterActive(true):FilterStart()
-	DeadUnitsList:HandleEvent(EVENTS.Dead)
-	
-	dofile("ClearFieldUnitInterment.lua")
-	
-	UnitIntermentTableLength = SEF_GetTableLength(ClearFieldUnitInterment)
+if ( trigger.misc.getUserFlag(9001) == 1 ) then -- JTF-1 progress saving active
+	if file_exists("ClearFieldUnitInterment.lua") then
+		DeadUnitsList = SET_UNIT:New():FilterCoalitions("red"):FilterCategories("ground"):FilterActive(true):FilterStart()
+		DeadUnitsList:HandleEvent(EVENTS.Dead)
 		
-	for i = 1, UnitIntermentTableLength do
-		--trigger.action.outText("Unit Interment Element "..i.." Is "..ClearFieldUnitInterment[i], 15)		
-		Unit.getByName(ClearFieldUnitInterment[i]):destroy()
-		SEFDeletedUnitCount = SEFDeletedUnitCount + 1		
-	end
-else
-	DeadUnitsList = SET_UNIT:New():FilterCoalitions("red"):FilterCategories("ground"):FilterActive(true):FilterStart()
-	DeadUnitsList:HandleEvent(EVENTS.Dead)		
-	ClearFieldUnitInterment = {}	
-	UnitIntermentTableLength = 0	
-end
---////LOAD STATICS
-if file_exists("ClearFieldStaticInterment.lua") then
-	
-	dofile("ClearFieldStaticInterment.lua")
+		dofile("ClearFieldUnitInterment.lua")
 		
-	StaticIntermentTableLength = SEF_GetTableLength(ClearFieldStaticInterment)
-	
-	for i = 1, StaticIntermentTableLength do		
-		StaticObject.getByName(ClearFieldStaticInterment[i]):destroy()		
-		SEFDeletedStaticCount = SEFDeletedStaticCount + 1
-	end
-else
-	ClearFieldStaticInterment = {}
-	StaticIntermentTableLength = 0	
-end
-
-trigger.action.outText("Persistent World Functions Have Removed "..SEFDeletedUnitCount.." Units and "..SEFDeletedStaticCount.." Static Objects", 15)
-
----------------------------------------------------------------------------------------------------------------------------------------------------
-
---SCHEDULE
-timer.scheduleFunction(SEF_SaveUnitIntermentTable, 53, timer.getTime() + SaveScheduleUnits)
-timer.scheduleFunction(SEF_SaveStaticIntermentTable, 53, timer.getTime() + SaveScheduleUnits)
-
----------------------------------------------------------------------------------------------------------------------------------------------------
-
-function DeadUnitsList:OnEventDead(EventData)
-
-	local DEADUNITNAME = EventData.IniDCSUnitName
-	local DEADUNITCOALITION = EventData.IniCoalition
-	local DEADUNITOBJECTCATEGORY = EventData.IniObjectCategory 	-- 1 UNIT / 2 WEAPON / 3 STATIC / 4 BASE / 5 SCENERY / 6 CARGO
-	local DEADUNITCATEGORY = EventData.IniCategory				-- 0 AIRPLANE / 1 HELICOPTER / 2 GROUND_UNIT / 3 SHIP / 4 STRUCTURE
-	
-	--[[
-	--Debug Zone
-	trigger.action.outText("Dead Unit Name: "..DEADUNITNAME, 15)
-	trigger.action.outText("Dead Unit Coalition: "..DEADUNITCOALITION, 15)
-	trigger.action.outText("Dead Unit Category: "..DEADUNITCATEGORY, 15)
-	trigger.action.outText("Dead Unit Object Category: "..DEADUNITOBJECTCATEGORY, 15)	
-	]]--
-	
-	if ( DEADUNITCOALITION == 1 ) then		
-		if ( DEADUNITOBJECTCATEGORY == 1 ) then -- UNIT
-			if ( DEADUNITCATEGORY == 2 or DEADUNITCATEGORY == 3 ) then -- GROUND_UNIT or SHIP
-				UnitIntermentTableLength = UnitIntermentTableLength + 1				
-				ClearFieldUnitInterment[UnitIntermentTableLength] = DEADUNITNAME			
-			else
-			end
-		elseif ( DEADUNITOBJECTCATEGORY == 3 ) then -- STATIC
-			StaticIntermentTableLength = StaticIntermentTableLength + 1			
-			ClearFieldStaticInterment[StaticIntermentTableLength] = DEADUNITNAME		
-		else
-		end		
+		UnitIntermentTableLength = SEF_GetTableLength(ClearFieldUnitInterment)
+			
+		for i = 1, UnitIntermentTableLength do
+			--trigger.action.outText("Unit Interment Element "..i.." Is "..ClearFieldUnitInterment[i], 15)		
+			Unit.getByName(ClearFieldUnitInterment[i]):destroy()
+			SEFDeletedUnitCount = SEFDeletedUnitCount + 1		
+		end
 	else
+		DeadUnitsList = SET_UNIT:New():FilterCoalitions("red"):FilterCategories("ground"):FilterActive(true):FilterStart()
+		DeadUnitsList:HandleEvent(EVENTS.Dead)		
+		ClearFieldUnitInterment = {}	
+		UnitIntermentTableLength = 0	
+	end
+	--////LOAD STATICS
+	if file_exists("ClearFieldStaticInterment.lua") then
+		
+		dofile("ClearFieldStaticInterment.lua")
+			
+		StaticIntermentTableLength = SEF_GetTableLength(ClearFieldStaticInterment)
+		
+		for i = 1, StaticIntermentTableLength do		
+			StaticObject.getByName(ClearFieldStaticInterment[i]):destroy()		
+			SEFDeletedStaticCount = SEFDeletedStaticCount + 1
+		end
+	else
+		ClearFieldStaticInterment = {}
+		StaticIntermentTableLength = 0	
+	end
+
+	trigger.action.outText("Persistent World Functions Have Removed "..SEFDeletedUnitCount.." Units and "..SEFDeletedStaticCount.." Static Objects", 15)
+
+	---------------------------------------------------------------------------------------------------------------------------------------------------
+
+	--SCHEDULE
+	timer.scheduleFunction(SEF_SaveUnitIntermentTable, 53, timer.getTime() + SaveScheduleUnits)
+	timer.scheduleFunction(SEF_SaveStaticIntermentTable, 53, timer.getTime() + SaveScheduleUnits)
+
+	---------------------------------------------------------------------------------------------------------------------------------------------------
+
+	function DeadUnitsList:OnEventDead(EventData)
+
+		local DEADUNITNAME = EventData.IniDCSUnitName
+		local DEADUNITCOALITION = EventData.IniCoalition
+		local DEADUNITOBJECTCATEGORY = EventData.IniObjectCategory 	-- 1 UNIT / 2 WEAPON / 3 STATIC / 4 BASE / 5 SCENERY / 6 CARGO
+		local DEADUNITCATEGORY = EventData.IniCategory				-- 0 AIRPLANE / 1 HELICOPTER / 2 GROUND_UNIT / 3 SHIP / 4 STRUCTURE
+		
+		--[[
+		--Debug Zone
+		trigger.action.outText("Dead Unit Name: "..DEADUNITNAME, 15)
+		trigger.action.outText("Dead Unit Coalition: "..DEADUNITCOALITION, 15)
+		trigger.action.outText("Dead Unit Category: "..DEADUNITCATEGORY, 15)
+		trigger.action.outText("Dead Unit Object Category: "..DEADUNITOBJECTCATEGORY, 15)	
+		]]--
+		
+		if ( DEADUNITCOALITION == 1 ) then		
+			if ( DEADUNITOBJECTCATEGORY == 1 ) then -- UNIT
+				if ( DEADUNITCATEGORY == 2 or DEADUNITCATEGORY == 3 ) then -- GROUND_UNIT or SHIP
+					UnitIntermentTableLength = UnitIntermentTableLength + 1				
+					ClearFieldUnitInterment[UnitIntermentTableLength] = DEADUNITNAME			
+				else
+				end
+			elseif ( DEADUNITOBJECTCATEGORY == 3 ) then -- STATIC
+				StaticIntermentTableLength = StaticIntermentTableLength + 1			
+				ClearFieldStaticInterment[StaticIntermentTableLength] = DEADUNITNAME		
+			else
+			end		
+		else
+		end
 	end
 end
