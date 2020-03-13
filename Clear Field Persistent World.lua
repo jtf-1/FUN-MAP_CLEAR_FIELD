@@ -85,14 +85,14 @@ end
 --////SAVE FUNCTION FOR STATICS
 function SEF_SaveStaticIntermentTable(timeloop, time)
 	IntermentMissionStrStatic = IntegratedserializeWithCycles("ClearFieldStaticInterment", ClearFieldStaticInterment)
-	writemission(IntermentMissionStrStatic, "ClearFieldStaticInterment.lua")
+	writemission(IntermentMissionStrStatic, "ClearFieldStaticInterment_121.lua")
 	--trigger.action.outText("Progress Has Been Saved", 15)	
 	return time + SaveScheduleUnits
 end
 
 function SEF_SaveStaticIntermentTableNoArgs()
 	IntermentMissionStrStatic = IntegratedserializeWithCycles("ClearFieldStaticInterment", ClearFieldStaticInterment)
-	writemission(IntermentMissionStrStatic, "ClearFieldStaticInterment.lua")	
+	writemission(IntermentMissionStrStatic, "ClearFieldStaticInterment_121.lua")	
 end
 
 -------------------------------------------------------------------------------------------------------------------------------------
@@ -129,9 +129,9 @@ SEFDeletedStaticCount = 0
 		UnitIntermentTableLength = 0	
 	end
 	--////LOAD STATICS
-	if file_exists("ClearFieldStaticInterment.lua") then
+	if file_exists("ClearFieldStaticInterment_121.lua") then
 		
-		dofile("ClearFieldStaticInterment.lua")
+		dofile("ClearFieldStaticInterment_121.lua")
 			
 		StaticIntermentTableLength = SEF_GetTableLength(ClearFieldStaticInterment)
 		--trigger.action.outText("Static Table Length Is "..StaticIntermentTableLength, 15)
