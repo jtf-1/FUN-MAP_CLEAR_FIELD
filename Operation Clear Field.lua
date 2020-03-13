@@ -159,37 +159,37 @@ function SEF_InitializeMissionTable()
 	
 	--KVEMO-ROKA
 	OperationClearField_AG[1] = {
-		TargetName = "Kvemo-Roka - AAA 1",
+		TargetName = "Kvemo Roka - AAA 1",
 		TargetStatic = false,
 		TargetBriefing = "Mission Update \nPrimary Objective - Destroy AAA assets located at Kvemo-Roka\nKvemo-Roka Sector - Grid MN21",
 	}			
 	OperationClearField_AG[2] = {	
-		TargetName = "Kvemo-Roka - Armor 1",
+		TargetName = "Kvemo Roka - Armor 1",
 		TargetStatic = false,
 		TargetBriefing = "Mission Update \nPrimary Objective - Destroy the T-90 Tanks located at Kvemo-Roka\nKvemo-Roka Sector - Grid MN21",				
 	}			
 	OperationClearField_AG[3] = {
-		TargetName = "Kvemo-Roka - Armor 2",
+		TargetName = "Kvemo Roka - Armor 2",
 		TargetStatic = false,
 		TargetBriefing = "Mission Update \nPrimary Objective - Destroy APC's and IFV's located at Zemo-Roka\nKvemo-Roka Sector - Grid MN21",
 	}					
 	OperationClearField_AG[4] = {
-		TargetName = "Kvemo-Roka - Armor 3",
+		TargetName = "Kvemo Roka - Armor 3",
 		TargetStatic = false,
 		TargetBriefing = "Mission Update \nPrimary Objective - Destroy APC's and IFV's located at Elbakita\nKvemo-Roka Sector - Grid MM19",
 	}					
 	OperationClearField_AG[5] = {
-		TargetName = "Kvemo-Roka - SAM 1",
+		TargetName = "Kvemo Roka - SAM 1",
 		TargetStatic = false,
 		TargetBriefing = "Mission Update \nPrimary Objective - Destroy the Mobile SAM located at Kvemo-Roka\nKvemo-Roka Sector - Grid MN21",
 	}			
 	OperationClearField_AG[6] = {
-		TargetName = "Kvemo-Roka - Supply 1",
+		TargetName = "Kvemo Roka - Supply 1",
 		TargetStatic = false,
 		TargetBriefing = "Mission Update \nPrimary Objective - Destroy the Supply Trucks located at Kvemo-Roka\nKvemo-Roka Sector - Grid MN21",
 	}			
 	OperationClearField_AG[7] = {
-		TargetName = "Kvemo-Roka - Convoy 1",
+		TargetName = "Kvemo Roka - Convoy 1",
 		TargetStatic = false,
 		TargetBriefing = "Mission Update \nPrimary Objective - Destroy the Convoy located at Kvemo-Sba\nKvemo-Roka Sector - Grid MN31",
 	}					
@@ -312,7 +312,7 @@ function SEF_InitializeMissionTable()
 	}
 	--////Major SAM Site
 	OperationClearField_AG[31] = {
-		TargetName = "RED SAM Gudauta SA-10",
+		TargetName = "Gudauta - SA-10",
 		TargetStatic = false,
 		TargetBriefing = "Mission Update \nPrimary Objective - Destroy the SA-10 site at Adzhapsha\nGudauta Sector - Grid FH47",
 	}
@@ -400,7 +400,7 @@ function SEF_InitializeMissionTable()
 	}
 	--////Major SAM Site
 	OperationClearField_AG[48] = {
-		TargetName = "RED SAM Sochi SA-11",
+		TargetName = "Sochi - SA-11",
 		TargetStatic = false,
 		TargetBriefing = "Mission Update \nPrimary Objective - Destroy the SA-11 site West of Dagomys\nSochi Sector - Grid EJ53",
 	}
@@ -457,7 +457,7 @@ function SEF_InitializeMissionTable()
 	}	
 	--////Major SAM Site
 	OperationClearField_AG[59] = {
-		TargetName = "RED SAM Sukhumi SA-10",
+		TargetName = "Sukhumi - SA-10",
 		TargetStatic = false,
 		TargetBriefing = "Mission Update \nPrimary Objective - Destroy the SA-10 site at Gul'ripsh\nSukhumi Sector - Grid FH75",	
 	}	
@@ -580,47 +580,47 @@ function SEF_InitializeMissionTable()
 	}
 	--Zemo-Azhara
 	OperationClearField_AG[83] = {
-		TargetName = "Zemo-Azhara - AAA 1",
+		TargetName = "Zemo Azhara - AAA 1",
 		TargetStatic = false,
 		TargetBriefing = "Mission Update \nPrimary Objective - Destroy AAA assets located East of Zemo-Azhara\nZemo-Azhara Sector - Grid GH27",
 	}
 	OperationClearField_AG[84] = {
-		TargetName = "Zemo-Azhara - AAA 2",
+		TargetName = "Zemo Azhara - AAA 2",
 		TargetStatic = false,
 		TargetBriefing = "Mission Update \nPrimary Objective - Destroy AAA assets located East of Zemo-Azhara\nZemo-Azhara Sector - Grid GH37",
 	}
 	OperationClearField_AG[85] = {
-		TargetName = "Zemo-Azhara - Armor 1",
+		TargetName = "Zemo Azhara - Armor 1",
 		TargetStatic = false,
 		TargetBriefing = "Mission Update \nPrimary Objective - Destroy the T-90 Tanks located East of Zemo-Azhara\nZemo-Azhara Sector - Grid GH27",
 	}
 	OperationClearField_AG[86] = {
-		TargetName = "Zemo-Azhara - Armor 2",
+		TargetName = "Zemo Azhara - Armor 2",
 		TargetStatic = false,
 		TargetBriefing = "Mission Update \nPrimary Objective - Destroy APC's and IFV's located East of Zemo-Azhara\nZemo-Azhara Sector - Grid GH37",
 	}
 	OperationClearField_AG[87] = {
-		TargetName = "Zemo-Azhara - Armor 3",
+		TargetName = "Zemo Azhara - Armor 3",
 		TargetStatic = false,
 		TargetBriefing = "Mission Update \nPrimary Objective - Destroy the T-90 Tanks located East of Zemo-Azhara\nZemo-Azhara Sector - Grid GH37",
 	}
 	OperationClearField_AG[88] = {
-		TargetName = "Zemo-Azhara - Artillery 1",
+		TargetName = "Zemo Azhara - Artillery 1",
 		TargetStatic = false,
 		TargetBriefing = "Mission Update \nPrimary Objective - Destroy the Artillery located East of Zemo-Azhara\nZemo-Azhara Sector - Grid GH27",
 	}
 	OperationClearField_AG[89] = {
-		TargetName = "Zemo-Azhara - Artillery 2",
+		TargetName = "Zemo Azhara - Artillery 2",
 		TargetStatic = false,
 		TargetBriefing = "Mission Update \nPrimary Objective - Destroy the Artillery located East of Zemo-Azhara\nZemo-Azhara Sector - Grid GH37",
 	}
 	OperationClearField_AG[90] = {
-		TargetName = "Zemo-Azhara - SAM 1",
+		TargetName = "Zemo Azhara - SAM 1",
 		TargetStatic = false,
 		TargetBriefing = "Mission Update \nPrimary Objective - Destroy the Mobile SAM located East of Zemo-Azhara\nZemo-Azhara Sector - Grid GH27",
 	}
 	OperationClearField_AG[91] = {
-		TargetName = "Zemo-Azhara - Supply 1",
+		TargetName = "Zemo Azhara - Supply 1",
 		TargetStatic = false,
 		TargetBriefing = "Mission Update \nPrimary Objective - Destroy the Supply Trucks located East of Zemo-Azhara\nZemo-Azhara Sector - Grid GH27",
 	}	
@@ -672,27 +672,27 @@ function SEF_InitializeMissionTable()
 	}
 	--////Expanded List 1
 	OperationClearField_AG[101] = {
-		TargetName = "DF RED EWR Veseloe",
+		TargetName = "Sochi - EWR Veseloe",
 		TargetStatic = false,
 		TargetBriefing = "Mission Update \nPrimary Objective - Destroy the Early Warning Radar located at Veseloe\nSochi Sector - Grid EJ80",
 	}
 	OperationClearField_AG[102] = {
-		TargetName = "DF RED EWR Gudauta 1",
+		TargetName = "Gudauta - EWR Gudauta 1",
 		TargetStatic = false,
 		TargetBriefing = "Mission Update \nPrimary Objective - Destroy the Early Warning Radar located at Algyt\nGudauta Sector - Grid FH27",
 	}
 	OperationClearField_AG[103] = {
-		TargetName = "DF RED EWR Gudauta 2",
+		TargetName = "Gudauta - EWR Gudauta 2",
 		TargetStatic = false,
 		TargetBriefing = "Mission Update \nPrimary Objective - Destroy the Early Warning Radar located at Adzhapsha\nGudauta Sector - Grid FH47",
 	}
 	OperationClearField_AG[104] = {
-		TargetName = "DF RED EWR Kvemo-Merheuli",
+		TargetName = "Sukhumi - EWR Kvemo-Merheuli",
 		TargetStatic = false,
 		TargetBriefing = "Mission Update \nPrimary Objective - Destroy the Early Warning Radar at Kvemo-Merheuli\nSukhumi Sector - Grid FH65",
 	}
 	OperationClearField_AG[105] = {
-		TargetName = "DF RED EWR Sukhumi",
+		TargetName = "Sukhumi - EWR Sukhumi",
 		TargetStatic = false,
 		TargetBriefing = "Mission Update \nPrimary Objective - Destroy the Early Warning Radar at the Sukhumi Airbase\nSukhumi Sector - Grid FH74",
 	}
@@ -753,7 +753,7 @@ function SEF_InitializeMissionTable()
 		TargetBriefing = "Mission Update \nPrimary Objective - Destroy the T-72 Tanks located at the Lidzava Military Barracks\nGudauta Sector - Grid FH18",
 	}
 	OperationClearField_AG[117] = {
-		TargetName = "Kvemo-Roka - Convoy 2",
+		TargetName = "Kvemo Roka - Convoy 2",
 		TargetStatic = false,
 		TargetBriefing = "Mission Update \nPrimary Objective - Destroy the Convoy located at Kvemo-Khoshka\nKvemo-Roka Sector - Grid MN20",
 	}
@@ -763,7 +763,7 @@ function SEF_InitializeMissionTable()
 		TargetBriefing = "Mission Update \nPrimary Objective - Destroy the Mi-8MTV2 Helicopter located at Agvavera\nTkvarcheli Sector - Grid GH23",
 	}
 	OperationClearField_AG[119] = {
-		TargetName = "Zemo-Azhara - Supply 2",
+		TargetName = "Zemo Azhara - Supply 2",
 		TargetStatic = false,
 		TargetBriefing = "Mission Update \nPrimary Objective - Destroy the Supply Trucks located East of Zemo-Azhara\nZemo-Azhara Sector - Grid GH37",
 	}
@@ -1508,10 +1508,7 @@ function SEF_RadioMenuSetup()
 	SupportMenuPIN = missionCommands.addSubMenuForCoalition(coalition.side.BLUE, "Request Pinpoint Strike", SupportMenuMain)
 	SupportMenuDrone = missionCommands.addSubMenuForCoalition(coalition.side.BLUE, "Request MQ-9 Reaper Drone", SupportMenuMain)
 	
-
-	--////Setup Menu For Objective Options
-	--ObjectiveMenuMain = missionCommands.addSubMenuForCoalition(coalition.side.BLUE, "Objective", nil)
-
+	--////Setup Menu Option To Get The Current Objective
 	--////Objective Options
 	missionCommands.addCommandForCoalition(coalition.side.BLUE, "Check Current Objective", ClearfieldMenuMain, function() CheckObjectiveRequest() end, nil)
 	missionCommands.addCommandForCoalition(coalition.side.BLUE, "Target Report", ClearfieldMenuMain, function() TargetReport() end, nil)
@@ -1540,73 +1537,73 @@ function SEF_RadioMenuSetup()
 	--////CAP Support Sector List
 	missionCommands.addCommandForCoalition(coalition.side.BLUE, "Sector Gori", SupportMenuCAP, function() RequestFighterSupport('Gori') end, nil)
 	missionCommands.addCommandForCoalition(coalition.side.BLUE, "Sector Gudauta", SupportMenuCAP, function() RequestFighterSupport('Gudauta') end, nil)
-	missionCommands.addCommandForCoalition(coalition.side.BLUE, "Sector Kvemo-Roka", SupportMenuCAP, function() RequestFighterSupport('Kvemo-Roka') end, nil)
+	missionCommands.addCommandForCoalition(coalition.side.BLUE, "Sector Kvemo-Roka", SupportMenuCAP, function() RequestFighterSupport('Kvemo Roka') end, nil)
 	missionCommands.addCommandForCoalition(coalition.side.BLUE, "Sector Ochamchira", SupportMenuCAP, function() RequestFighterSupport('Ochamchira') end, nil)
 	missionCommands.addCommandForCoalition(coalition.side.BLUE, "Sector Sochi", SupportMenuCAP, function() RequestFighterSupport('Sochi') end, nil)
 	missionCommands.addCommandForCoalition(coalition.side.BLUE, "Sector Sukhumi", SupportMenuCAP, function() RequestFighterSupport('Sukhumi') end, nil)
 	missionCommands.addCommandForCoalition(coalition.side.BLUE, "Sector Tkvarcheli", SupportMenuCAP, function() RequestFighterSupport('Tkvarcheli') end, nil)
 	missionCommands.addCommandForCoalition(coalition.side.BLUE, "Sector Tskhinvali", SupportMenuCAP, function() RequestFighterSupport('Tskhinvali') end, nil)
-	missionCommands.addCommandForCoalition(coalition.side.BLUE, "Sector Zemo-Azhara", SupportMenuCAP, function() RequestFighterSupport('Zemo-Azhara') end, nil)
+	missionCommands.addCommandForCoalition(coalition.side.BLUE, "Sector Zemo-Azhara", SupportMenuCAP, function() RequestFighterSupport('Zemo Azhara') end, nil)
 	missionCommands.addCommandForCoalition(coalition.side.BLUE, "Sector Zugdidi", SupportMenuCAP, function() RequestFighterSupport('Zugdidi') end, nil)
 		
 	--////CAS Support Sector List
 	missionCommands.addCommandForCoalition(coalition.side.BLUE, "Sector Gori", SupportMenuCAS, function() RequestCASSupport('Gori') end, nil)
 	missionCommands.addCommandForCoalition(coalition.side.BLUE, "Sector Gudauta", SupportMenuCAS, function() RequestCASSupport('Gudauta') end, nil)
-	missionCommands.addCommandForCoalition(coalition.side.BLUE, "Sector Kvemo-Roka", SupportMenuCAS, function() RequestCASSupport('Kvemo-Roka') end, nil)
+	missionCommands.addCommandForCoalition(coalition.side.BLUE, "Sector Kvemo-Roka", SupportMenuCAS, function() RequestCASSupport('Kvemo Roka') end, nil)
 	missionCommands.addCommandForCoalition(coalition.side.BLUE, "Sector Ochamchira", SupportMenuCAS, function() RequestCASSupport('Ochamchira') end, nil)
 	missionCommands.addCommandForCoalition(coalition.side.BLUE, "Sector Sochi", SupportMenuCAS, function() RequestCASSupport('Sochi') end, nil)
 	missionCommands.addCommandForCoalition(coalition.side.BLUE, "Sector Sukhumi", SupportMenuCAS, function() RequestCASSupport('Sukhumi') end, nil)
 	missionCommands.addCommandForCoalition(coalition.side.BLUE, "Sector Tkvarcheli", SupportMenuCAS, function() RequestCASSupport('Tkvarcheli') end, nil)
 	missionCommands.addCommandForCoalition(coalition.side.BLUE, "Sector Tskhinvali", SupportMenuCAS, function() RequestCASSupport('Tskhinvali') end, nil)
-	missionCommands.addCommandForCoalition(coalition.side.BLUE, "Sector Zemo-Azhara", SupportMenuCAS, function() RequestCASSupport('Zemo-Azhara') end, nil)
+	missionCommands.addCommandForCoalition(coalition.side.BLUE, "Sector Zemo-Azhara", SupportMenuCAS, function() RequestCASSupport('Zemo Azhara') end, nil)
 	missionCommands.addCommandForCoalition(coalition.side.BLUE, "Sector Zugdidi", SupportMenuCAS, function() RequestCASSupport('Zugdidi') end, nil)
 	
 	--////ANTI-SHIPPING Support Sector List
 	--missionCommands.addCommandForCoalition(coalition.side.BLUE, "Sector Gori", SupportMenuASS, function() RequestASSSupport('Gori') end, nil)
 	missionCommands.addCommandForCoalition(coalition.side.BLUE, "Sector Gudauta", SupportMenuASS, function() RequestASSSupport('Gudauta') end, nil)
-	--missionCommands.addCommandForCoalition(coalition.side.BLUE, "Sector Kvemo-Roka", SupportMenuASS, function() RequestASSSupport('Kvemo-Roka') end, nil)
+	--missionCommands.addCommandForCoalition(coalition.side.BLUE, "Sector Kvemo-Roka", SupportMenuASS, function() RequestASSSupport('Kvemo Roka') end, nil)
 	missionCommands.addCommandForCoalition(coalition.side.BLUE, "Sector Ochamchira", SupportMenuASS, function() RequestASSSupport('Ochamchira') end, nil)
 	missionCommands.addCommandForCoalition(coalition.side.BLUE, "Sector Sochi", SupportMenuASS, function() RequestASSSupport('Sochi') end, nil)
 	missionCommands.addCommandForCoalition(coalition.side.BLUE, "Sector Sukhumi", SupportMenuASS, function() RequestASSSupport('Sukhumi') end, nil)
 	--missionCommands.addCommandForCoalition(coalition.side.BLUE, "Sector Tkvarcheli", SupportMenuASS, function() RequestASSSupport('Tkvarcheli') end, nil)
 	--missionCommands.addCommandForCoalition(coalition.side.BLUE, "Sector Tskhinvali", SupportMenuASS, function() RequestASSSupport('Tskhinvali') end, nil)
-	--missionCommands.addCommandForCoalition(coalition.side.BLUE, "Sector Zemo-Azhara", SupportMenuASS, function() RequestASSSupport('Zemo-Azhara') end, nil)
+	--missionCommands.addCommandForCoalition(coalition.side.BLUE, "Sector Zemo-Azhara", SupportMenuASS, function() RequestASSSupport('Zemo Azhara') end, nil)
 	--missionCommands.addCommandForCoalition(coalition.side.BLUE, "Sector Zugdidi", SupportMenuASS, function() RequestASSSupport('Zugdidi') end, nil)
 		
 	--////SEAD Support Sector List
 	missionCommands.addCommandForCoalition(coalition.side.BLUE, "Sector Gori", SupportMenuSEAD, function() RequestSEADSupport('Gori') end, nil)
 	missionCommands.addCommandForCoalition(coalition.side.BLUE, "Sector Gudauta", SupportMenuSEAD, function() RequestSEADSupport('Gudauta') end, nil)
-	missionCommands.addCommandForCoalition(coalition.side.BLUE, "Sector Kvemo-Roka", SupportMenuSEAD, function() RequestSEADSupport('Kvemo-Roka') end, nil)
+	missionCommands.addCommandForCoalition(coalition.side.BLUE, "Sector Kvemo-Roka", SupportMenuSEAD, function() RequestSEADSupport('Kvemo Roka') end, nil)
 	missionCommands.addCommandForCoalition(coalition.side.BLUE, "Sector Ochamchira", SupportMenuSEAD, function() RequestSEADSupport('Ochamchira') end, nil)
 	missionCommands.addCommandForCoalition(coalition.side.BLUE, "Sector Sochi", SupportMenuSEAD, function() RequestSEADSupport('Sochi') end, nil)
 	missionCommands.addCommandForCoalition(coalition.side.BLUE, "Sector Sukhumi", SupportMenuSEAD, function() RequestSEADSupport('Sukhumi') end, nil)
 	missionCommands.addCommandForCoalition(coalition.side.BLUE, "Sector Tkvarcheli", SupportMenuSEAD, function() RequestSEADSupport('Tkvarcheli') end, nil)
 	missionCommands.addCommandForCoalition(coalition.side.BLUE, "Sector Tskhinvali", SupportMenuSEAD, function() RequestSEADSupport('Tskhinvali') end, nil)
-	missionCommands.addCommandForCoalition(coalition.side.BLUE, "Sector Zemo-Azhara", SupportMenuSEAD, function() RequestSEADSupport('Zemo-Azhara') end, nil)
+	missionCommands.addCommandForCoalition(coalition.side.BLUE, "Sector Zemo-Azhara", SupportMenuSEAD, function() RequestSEADSupport('Zemo Azhara') end, nil)
 	missionCommands.addCommandForCoalition(coalition.side.BLUE, "Sector Zugdidi", SupportMenuSEAD, function() RequestSEADSupport('Zugdidi') end, nil)
 	
 	--////PIN Support Sector List
-	--missionCommands.addCommandForCoalition(coalition.side.BLUE, "Sector Gori", SupportMenuPIN, function() RequestPINSupport('Gori') end, nil)
+	missionCommands.addCommandForCoalition(coalition.side.BLUE, "Sector Gori", SupportMenuPIN, function() RequestPINSupport('Gori') end, nil)
 	missionCommands.addCommandForCoalition(coalition.side.BLUE, "Sector Gudauta", SupportMenuPIN, function() RequestPINSupport('Gudauta') end, nil)
-	--missionCommands.addCommandForCoalition(coalition.side.BLUE, "Sector Kvemo-Roka", SupportMenuPIN, function() RequestPINSupport('Kvemo-Roka') end, nil)
+	missionCommands.addCommandForCoalition(coalition.side.BLUE, "Sector Kvemo-Roka", SupportMenuPIN, function() RequestPINSupport('Kvemo Roka') end, nil)
 	missionCommands.addCommandForCoalition(coalition.side.BLUE, "Sector Ochamchira", SupportMenuPIN, function() RequestPINSupport('Ochamchira') end, nil)
 	missionCommands.addCommandForCoalition(coalition.side.BLUE, "Sector Sochi", SupportMenuPIN, function() RequestPINSupport('Sochi') end, nil)
 	missionCommands.addCommandForCoalition(coalition.side.BLUE, "Sector Sukhumi", SupportMenuPIN, function() RequestPINSupport('Sukhumi') end, nil)
 	missionCommands.addCommandForCoalition(coalition.side.BLUE, "Sector Tkvarcheli", SupportMenuPIN, function() RequestPINSupport('Tkvarcheli') end, nil)
 	missionCommands.addCommandForCoalition(coalition.side.BLUE, "Sector Tskhinvali", SupportMenuPIN, function() RequestPINSupport('Tskhinvali') end, nil)
-	--missionCommands.addCommandForCoalition(coalition.side.BLUE, "Sector Zemo-Azhara", SupportMenuPIN, function() RequestPINSupport('Zemo-Azhara') end, nil)
+	missionCommands.addCommandForCoalition(coalition.side.BLUE, "Sector Zemo-Azhara", SupportMenuPIN, function() RequestPINSupport('Zemo Azhara') end, nil)
 	missionCommands.addCommandForCoalition(coalition.side.BLUE, "Sector Zugdidi", SupportMenuPIN, function() RequestPINSupport('Zugdidi') end, nil)
 
 	--////DRONE Support Sector List
 	missionCommands.addCommandForCoalition(coalition.side.BLUE, "Sector Gori", SupportMenuDrone, function() RequestDroneSupport('Gori') end, nil)
 	missionCommands.addCommandForCoalition(coalition.side.BLUE, "Sector Gudauta", SupportMenuDrone, function() RequestDroneSupport('Gudauta') end, nil)
-	missionCommands.addCommandForCoalition(coalition.side.BLUE, "Sector Kvemo-Roka", SupportMenuDrone, function() RequestDroneSupport('Kvemo-Roka') end, nil)
+	missionCommands.addCommandForCoalition(coalition.side.BLUE, "Sector Kvemo-Roka", SupportMenuDrone, function() RequestDroneSupport('Kvemo Roka') end, nil)
 	missionCommands.addCommandForCoalition(coalition.side.BLUE, "Sector Ochamchira", SupportMenuDrone, function() RequestDroneSupport('Ochamchira') end, nil)
 	missionCommands.addCommandForCoalition(coalition.side.BLUE, "Sector Sochi", SupportMenuDrone, function() RequestDroneSupport('Sochi') end, nil)
 	missionCommands.addCommandForCoalition(coalition.side.BLUE, "Sector Sukhumi", SupportMenuDrone, function() RequestDroneSupport('Sukhumi') end, nil)
 	missionCommands.addCommandForCoalition(coalition.side.BLUE, "Sector Tkvarcheli", SupportMenuDrone, function() RequestDroneSupport('Tkvarcheli') end, nil)
 	missionCommands.addCommandForCoalition(coalition.side.BLUE, "Sector Tskhinvali", SupportMenuDrone, function() RequestDroneSupport('Tskhinvali') end, nil)
-	missionCommands.addCommandForCoalition(coalition.side.BLUE, "Sector Zemo-Azhara", SupportMenuDrone, function() RequestDroneSupport('Zemo-Azhara') end, nil)
+	missionCommands.addCommandForCoalition(coalition.side.BLUE, "Sector Zemo-Azhara", SupportMenuDrone, function() RequestDroneSupport('Zemo Azhara') end, nil)
 	missionCommands.addCommandForCoalition(coalition.side.BLUE, "Sector Zugdidi", SupportMenuDrone, function() RequestDroneSupport('Zugdidi') end, nil)	
 end
 
@@ -1844,6 +1841,22 @@ function SEF_BLUEShellSpawn()
 		:Spawn()
 end
 
+function SEF_BLUEArcoSpawn()	
+			
+	BLUEARCO = SPAWN
+		:New( "RT ARCO" )
+		:InitLimit( 1, 1 )
+		:InitRandomizeTemplate( { "SQ BLUE S-3B" } )
+		
+		:OnSpawnGroup(
+			function( SpawnGroup )								
+				RTBLUEARCOGROUPNAME = SpawnGroup.GroupName
+				RTBLUESARCOGROUPID = Group.getByName(RTBLUEARCOGROUPNAME):getID()												
+			end
+		)		
+		:Spawn()
+end
+
 function SEF_BLUEAWACSRTBMessage()
 	trigger.action.outText("AWACS Is Returning To Base",60)
 end
@@ -1854,6 +1867,10 @@ end
 
 function SEF_BLUEShellRTBMessage()
 	trigger.action.outText("Tanker Shell Is Returning To Base",60)
+end
+
+function SEF_BLUEArcoRTBMessage()
+	trigger.action.outText("Tanker Arco Is Returning To Base",60)
 end
 
 --////End Blue Awacs/Tankers Spawn
@@ -1936,13 +1953,10 @@ end
 		NumberOfCompletedMissions = 0
 		TotalScenarios = 125
 		OperationComplete = false
-		OnShotSoundsEnabled = 0
+		OnShotSoundsEnabled = 1
 		SoundLockout = 0
 		TargetSmokeLockout = 0
-		--////MOOSE ENVIRONMENT INITIALISATION
-		_SETTINGS:SetPlayerMenuOff()
-		_SETTINGS:SetImperial()
-		
+				
 		--////ENABLE CAP/CAS/ASS/SEAD/PIN/DRONE
 		trigger.action.setUserFlag(5001,1)
 		trigger.action.setUserFlag(5002,1)
@@ -1960,7 +1974,8 @@ end
 		SEF_BLUEAwacsSpawn()
 		SEF_BLUETexacoSpawn()
 		SEF_BLUEShellSpawn()
-		SEF_CarrierDefenceZone()
+		SEF_BLUEArcoSpawn()
+		--SEF_CarrierDefenceZone()
 		
 		--////SCHEDULERS
 		--AI FLIGHT PUSH FLAGS		
@@ -1970,21 +1985,21 @@ end
 		--RED BOMBER ATTACKS - WAIT 10-15 MINUTES BEFORE STARTING
 		timer.scheduleFunction(SEF_RedBomberScheduler, 53, timer.getTime() + math.random(600, 900))
 		--CARRIER DEFENCE ZONE SCANNER - WAIT 5 MINUTES BEFORE STARTING
-		timer.scheduleFunction(SEF_CarrierDefenceZoneScanner, 53, timer.getTime() + 300)	
+		--timer.scheduleFunction(SEF_CarrierDefenceZoneScanner, 53, timer.getTime() + 300)	
 	
 --////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 --////Stuff
 --[[
 
-Kvemo-Roka - AAA 1													MN21 At Kvemo-Roka							
-Kvemo-Roka - Armor 1												MN21 At Kvemo-Roka			
-Kvemo-Roka - Armor 2												MN21 At Zemo-Roka						
-Kvemo-Roka - Armor 3												MM19 At Elbakita						
-Kvemo-Roka - SAM 1													MN21 At Kvemo-Roka																		
-Kvemo-Roka - Supply 1												MN21 At Kvemo-Roka						
-Kvemo-Roka - Convoy 1												MN31 At Kvemo-Sba
-Kvemo-Roka - Convoy 2					8							MN20 At Kvemo-Khoshka
+Kvemo Roka - AAA 1													MN21 At Kvemo-Roka							
+Kvemo Roka - Armor 1												MN21 At Kvemo-Roka			
+Kvemo Roka - Armor 2												MN21 At Zemo-Roka						
+Kvemo Roka - Armor 3												MM19 At Elbakita						
+Kvemo Roka - SAM 1													MN21 At Kvemo-Roka																		
+Kvemo Roka - Supply 1												MN21 At Kvemo-Roka						
+Kvemo Roka - Convoy 1												MN31 At Kvemo-Sba
+Kvemo Roka - Convoy 2					8							MN20 At Kvemo-Khoshka
 
 Gori - AAA 1														MM26 South of Dzevera
 Gori - AAA 2														MM24 At Gori
@@ -2081,16 +2096,16 @@ Tskhinvali - Barracks						Static					MM17 At Tskhinvali
 Tskhinvali - Command HQ						Static					MM17 At Tskhinvali
 Tskhinvali - Supply 1				14								MM17 At Tskhinvali
 
-Zemo-Azhara - AAA 1													GH27 East Of Zemo-Azhara
-Zemo-Azhara - AAA 2													GH37 East of Zemo-Azhara	
-Zemo-Azhara - Armor 1												GH27 East Of Zemo-Azhara
-Zemo-Azhara - Armor 2												GH37 East of Zemo-Azhara	
-Zemo-Azhara - Armor 3												GH37 East of Zemo-Azhara
-Zemo-Azhara - Artillery 1											GH27 East Of Zemo-Azhara
-Zemo-Azhara - Artillery 2											GH37 East of Zemo-Azhara
-Zemo-Azhara - SAM 1													GH27 East Of Zemo-Azhara
-Zemo-Azhara - Supply 1												GH27 East Of Zemo-Azhara
-Zemo-Azhara - Supply 2				10								GH37 East of Zemo-Azhara		
+Zemo Azhara - AAA 1													GH27 East Of Zemo-Azhara
+Zemo Azhara - AAA 2													GH37 East of Zemo-Azhara	
+Zemo Azhara - Armor 1												GH27 East Of Zemo-Azhara
+Zemo Azhara - Armor 2												GH37 East of Zemo-Azhara	
+Zemo Azhara - Armor 3												GH37 East of Zemo-Azhara
+Zemo Azhara - Artillery 1											GH27 East Of Zemo-Azhara
+Zemo Azhara - Artillery 2											GH37 East of Zemo-Azhara
+Zemo Azhara - SAM 1													GH27 East Of Zemo-Azhara
+Zemo Azhara - Supply 1												GH27 East Of Zemo-Azhara
+Zemo Azhara - Supply 2				10								GH37 East of Zemo-Azhara		
 
 Zugdidi - AAA 1														GH20/21 At Zeni
 Zugdidi - AAA 2														GH31 East of Chuburhindzhi

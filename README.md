@@ -1,12 +1,14 @@
 Operation Clear Field by SURREXEN
 
+FARP LONDON BEACON: 50 FM
+
 AWACS
-=====
+================
 
 Overlord 1-1 282.025 (E3A)
 
 DCS Callsigns
--------------
+================
 
 VF-2 1/2/3: ENFIELD 1/2/3
 
@@ -33,17 +35,15 @@ Stennis CVN-74
 
 (Use CV TWR alt freq 289.025 to call AI Tower to reqest landing. This also activates lights at night)
 
-
-
 TANKERS
-=======
+================
 
 - Texaco 1 [KC-135MPRS] (330kt IAS), Track DP-CN, 13Y, 317.775 
 - Shell 1 [KC-135] (300kt IAS), Track DP-CN, 14Y, 317.65
 - Arco [S-3B] (300kt IAS), STENNIS HAWK, 38Y, 276.100
 
 AERIAL JTAC
-===========
+================
 
 Pontiac-9-1 - MQ-9 Reaper Aerial Drone
 Frequency: 272 Mhz AM
@@ -51,7 +51,7 @@ Frequency: 272 Mhz AM
 Be Advised Bullseye Calls Are Referencing Zugdidi
 
 MISCELLANEOUS
-=============
+================
 
 Operation Clear Field is a persistent, open world PvE playground for the Caucasus map.It is loosely based on the Russo-Georgian war of 2008. This mission uses the same mechanics that Operation Snowfox uses for the Persian Gulf map. The mission will randomly choose targets throughout the map. You can fly any role you like, and if you are on your own, you can use the radio menu to request support flights of AI planes to assist you. Most modules have been included. You will be flying against the Russians.
 

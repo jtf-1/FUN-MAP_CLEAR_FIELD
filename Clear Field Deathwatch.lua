@@ -44,23 +44,28 @@ function SET_RTREDBLUELAND:OnEventLand(EventData)
 	elseif string.find(RTREDBLUEPLANEGROUP, "RT AWACS") then
 		trigger.action.outText("An " .. RTREDBLUETYPE .. " Has Landed At " .. RTREDBLUEPLACENAME,15)
 		Unit.getByName(RTREDBLUEPLANEUNIT):destroy()
-		SEF_BLUEAwacsSpawn()	
+		timer.scheduleFunction(SEF_BLUEAwacsSpawn, {}, timer.getTime() + 10)	
 	elseif string.find(RTREDBLUEPLANEGROUP, "RT TEXACO") then
 		trigger.action.outText("An " .. RTREDBLUETYPE .. " Has Landed At " .. RTREDBLUEPLACENAME,15)
 		Unit.getByName(RTREDBLUEPLANEUNIT):destroy()
-		SEF_BLUETexacoSpawn()
+		timer.scheduleFunction(SEF_BLUETexacoSpawn, {}, timer.getTime() + 10)
 	elseif string.find(RTREDBLUEPLANEGROUP, "RT SHELL") then
 		trigger.action.outText("An " .. RTREDBLUETYPE .. " Has Landed At " .. RTREDBLUEPLACENAME,15)
 		Unit.getByName(RTREDBLUEPLANEUNIT):destroy()
-		SEF_BLUEShellSpawn()
+		timer.scheduleFunction(SEF_BLUEShellSpawn, {}, timer.getTime() + 10)
+	elseif string.find(RTREDBLUEPLANEGROUP, "RT ARCO") then
+		trigger.action.outText("An " .. RTREDBLUETYPE .. " Has Landed At " .. RTREDBLUEPLACENAME,15)
+		Unit.getByName(RTREDBLUEPLANEUNIT):destroy()
+		timer.scheduleFunction(SEF_BLUEArcoSpawn, {}, timer.getTime() + 10)	
 	else
 	end	
 end
 
-function SET_DEATHWATCH:OnEventCrash(EventData)
+function SET_DEATHWATCH:OnEventCrash(EventData)	
 	local CrashedUnitCoalition = EventData.IniCoalition
 	local CrashedUnitType = EventData.IniTypeName
-		
+	local CrashedUnitPlaneGroup = EventData.IniDCSGroupName
+	
 	if ( CrashedUnitCoalition == 1 and CrashedUnitType == 'MiG-21Bis' ) then			-- Enemy MiG-21Bis Down
 		trigger.action.outText("A " .. CrashedUnitType .. " Has Been Destroyed!",15)
 		local RandomMigSound = math.random(1,2)
@@ -76,8 +81,19 @@ function SET_DEATHWATCH:OnEventCrash(EventData)
 	elseif ( CrashedUnitCoalition == 2 ) then 											-- Allied Plane Down
 		trigger.action.outText("A " .. CrashedUnitType .. " Has Been Destroyed!",15)
 		timer.scheduleFunction(FriendlyDownSound, {}, timer.getTime() + 1)		
-	else
-		--Do nothing
+	
+		--Respawn AWACS and Tankers
+		if string.find(CrashedUnitPlaneGroup, "RT AWACS") then
+			timer.scheduleFunction(SEF_BLUEAwacsSpawn, {}, timer.getTime() + 10)				
+		elseif string.find(CrashedUnitPlaneGroup, "RT TEXACO") then
+			timer.scheduleFunction(SEF_BLUETexacoSpawn, {}, timer.getTime() + 10)			
+		elseif string.find(CrashedUnitPlaneGroup, "RT SHELL") then			
+			timer.scheduleFunction(SEF_BLUEShellSpawn, {}, timer.getTime() + 10)
+		elseif string.find(CrashedUnitPlaneGroup, "RT ARCO") then			
+			timer.scheduleFunction(SEF_BLUEArcoSpawn, {}, timer.getTime() + 10)	
+		else
+		end	
+	else		
 	end		
 end
 
