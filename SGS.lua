@@ -37,6 +37,10 @@
  -----------------------------------
  local version = "1.0"
  
+ if nameSaveUnitsFile == nil then
+	nameSaveUnitsFile = "SaveUnits_temp.lua"
+ end
+ 
  function IntegratedbasicSerialize(s)
     if s == nil then
       return "\"\""
@@ -102,14 +106,14 @@ end
 --SCRIPT START
 env.info("Loaded Simple Group Saving, by Pikey, 2018, version " .. version)
 
-if file_exists("SaveUnits_121.lua") then --Script has been run before, so we need to load the save
+if file_exists(nameSaveUnitsFile) then --Script has been run before, so we need to load the save
   env.info("Existing database, loading from File.")
-  AllGroups = SET_GROUP:New():FilterCategories("ground"):FilterActive(true):FilterStart()
+  AllGroups = SET_GROUP:New():FilterCoalitions("blue"):FilterCategories("ground"):FilterActive(true):FilterStart()
     AllGroups:ForEachGroup(function (grp)
       grp:Destroy()
     end)
 
-  dofile("SaveUnits_121.lua")
+  dofile(nameSaveUnitsFile)
   tempTable={}
   Spawn={}
 --RUN THROUGH THE KEYS IN THE TABLE (GROUPS)
@@ -170,54 +174,54 @@ end
 
 --THE SAVING SCHEDULE
 SCHEDULER:New( nil, function()
-  AllGroups:ForEachGroupAlive(function (grp)
-  local DCSgroup = Group.getByName(grp:GetName() )
-  local size = DCSgroup:getSize()
+	AllGroups:ForEachGroupAlive(function (grp)
+		local DCSgroup = Group.getByName(grp:GetName() )
+		local size = DCSgroup:getSize()
 
-_unittable={}
+		_unittable={}
 
-for i = 1, size do
+		for i = 1, size do
 
-local tmpTable =
+			local tmpTable =
 
-  {   
-    ["type"]=grp:GetUnit(i):GetTypeName(),
-    ["transportable"]=true,
-    ["unitID"]=grp:GetUnit(i):GetID(),
-    ["skill"]="Average",
-    ["y"]=grp:GetUnit(i):GetVec2().y,
-    ["x"]=grp:GetUnit(i):GetVec2().x,
-    ["name"]=grp:GetUnit(i):GetName(),
-    ["playerCanDrive"]=true,
-    ["heading"]=grp:GetUnit(i):GetHeading(),
-  }
+			  {   
+				["type"]=grp:GetUnit(i):GetTypeName(),
+				["transportable"]=true,
+				["unitID"]=grp:GetUnit(i):GetID(),
+				["skill"]="Average",
+				["y"]=grp:GetUnit(i):GetVec2().y,
+				["x"]=grp:GetUnit(i):GetVec2().x,
+				["name"]=grp:GetUnit(i):GetName(),
+				["playerCanDrive"]=true,
+				["heading"]=grp:GetUnit(i):GetHeading(),
+			  }
 
-table.insert(_unittable,tmpTable) --add units to a temporary table
-end
+			table.insert(_unittable,tmpTable) --add units to a temporary table
+		end
 
-SaveUnits[grp:GetName()] =
-{
-   ["CountryID"]=grp:GetCountry(),
-   ["SpawnCoalitionID"]=grp:GetCountry(),
-   ["tasks"]={}, --grp:GetTaskMission(), --wrong gives the whole thing
-   ["CategoryID"]=grp:GetCategory(),
-   ["task"]="Ground Nothing",
-   ["route"]={}, -- grp:GetTaskRoute(),
-   ["groupId"]=grp:GetID(),
-   --["SpawnCategoryID"]=grp:GetCategory(),
-   ["units"]= _unittable,
-   ["y"]=grp:GetVec2().y, 
-   ["x"]=grp:GetVec2().x,
-   ["name"]=grp:GetName(),
-   ["start_time"]=0,
-   ["CoalitionID"]=grp:GetCoalition(),
-   ["SpawnCountryID"]=grp:GetCoalition(),
-}
+		SaveUnits[grp:GetName()] =
+		{
+		   ["CountryID"]=grp:GetCountry(),
+		   ["SpawnCoalitionID"]=grp:GetCountry(),
+		   ["tasks"]={}, --grp:GetTaskMission(), --wrong gives the whole thing
+		   ["CategoryID"]=grp:GetCategory(),
+		   ["task"]="Ground Nothing",
+		   ["route"]={}, -- grp:GetTaskRoute(),
+		   ["groupId"]=grp:GetID(),
+		   --["SpawnCategoryID"]=grp:GetCategory(),
+		   ["units"]= _unittable,
+		   ["y"]=grp:GetVec2().y, 
+		   ["x"]=grp:GetVec2().x,
+		   ["name"]=grp:GetName(),
+		   ["start_time"]=0,
+		   ["CoalitionID"]=grp:GetCoalition(),
+		   ["SpawnCountryID"]=grp:GetCoalition(),
+		}
 
-end)
+	end)
 
-newMissionStr = IntegratedserializeWithCycles("SaveUnits",SaveUnits) --save the Table as a serialised type with key SaveUnits
-writemission(newMissionStr, "SaveUnits_121.lua")--write the file from the above to SaveUnits_121.lua
-SaveUnits={}--clear the table for a new write.
---env.info("Data saved.")
+	newMissionStr = IntegratedserializeWithCycles("SaveUnits",SaveUnits) --save the Table as a serialised type with key SaveUnits
+	writemission(newMissionStr, nameSaveUnitsFile)--write the file from the above to nameSaveUnitsFile
+	SaveUnits={}--clear the table for a new write.
+	--env.info("Data saved.")
 end, {}, 1, SaveScheduleUnits)

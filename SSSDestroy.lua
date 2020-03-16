@@ -35,6 +35,9 @@
  --Do not edit below here
  -----------------------------------
  local version = "1.2"
+ if nameSaveStatics == nil then
+	nameSaveStatics = "SaveStatics_temp.lua"
+end
  
  function IntegratedbasicSerialize(s)
     if s == nil then
@@ -114,9 +117,9 @@ end
 --SCRIPT START
 env.info("Loaded Simple Statics Saving, by Pikey, 2018, (updated Dec 2019) version " .. version)
 
-if file_exists("SaveStatics_121.lua") then
+if file_exists(nameSaveStatics) then
   env.info("Script loading existing database")
-  dofile("SaveStatics_121.lua")
+  dofile(nameSaveStatics)
 
   AllStatics = SET_STATIC:New():FilterStart()
 
@@ -161,7 +164,7 @@ SaveStatics[grp:GetName()] =
 end)--end of the for each groupAlive iteration
 
 local newMissionStr = IntegratedserializeWithCycles("SaveStatics",SaveStatics)
-writemission(newMissionStr, "SaveStatics_121.lua")
+writemission(newMissionStr, nameSaveStatics)
 SaveStatics={} --flatten this between iterations to prevent accumulations
 --env.info("Data saved.")
 end, {}, 1, SaveScheduleStatics)

@@ -1,7 +1,14 @@
 ----------------------------------------------------------
 SaveScheduleUnits = 150 --Seconds between each table write
 ----------------------------------------------------------
-  
+
+if nameClearFieldStaticIntermentFile == nil then
+	nameClearFieldStaticIntermentFile = "ClearFieldStaticInterment_temp.lua"
+end
+if nameClearFieldUnitIntermentFile == nil then
+	nameClearFieldUnitIntermentFile = "ClearFieldUnitInterment_temp.lua"
+end
+ 
 function IntegratedbasicSerialize(s)
     if s == nil then
 		return "\"\""
@@ -72,27 +79,27 @@ end
 --////SAVE FUNCTION FOR UNITS
 function SEF_SaveUnitIntermentTable(timeloop, time)
 	IntermentMissionStr = IntegratedserializeWithCycles("ClearFieldUnitInterment", ClearFieldUnitInterment)
-	writemission(IntermentMissionStr, "ClearFieldUnitInterment.lua")
+	writemission(IntermentMissionStr, nameClearFieldUnitIntermentFile)
 	--trigger.action.outText("Progress Has Been Saved", 15)	
 	return time + SaveScheduleUnits
 end
 
 function SEF_SaveUnitIntermentTableNoArgs()
 	IntermentMissionStr = IntegratedserializeWithCycles("ClearFieldUnitInterment", ClearFieldUnitInterment)
-	writemission(IntermentMissionStr, "ClearFieldUnitInterment.lua")		
+	writemission(IntermentMissionStr, nameClearFieldUnitIntermentFile)		
 end
 
 --////SAVE FUNCTION FOR STATICS
 function SEF_SaveStaticIntermentTable(timeloop, time)
 	IntermentMissionStrStatic = IntegratedserializeWithCycles("ClearFieldStaticInterment", ClearFieldStaticInterment)
-	writemission(IntermentMissionStrStatic, "ClearFieldStaticInterment_121.lua")
+	writemission(IntermentMissionStrStatic, nameClearFieldStaticIntermentFile)
 	--trigger.action.outText("Progress Has Been Saved", 15)	
 	return time + SaveScheduleUnits
 end
 
 function SEF_SaveStaticIntermentTableNoArgs()
 	IntermentMissionStrStatic = IntegratedserializeWithCycles("ClearFieldStaticInterment", ClearFieldStaticInterment)
-	writemission(IntermentMissionStrStatic, "ClearFieldStaticInterment_121.lua")	
+	writemission(IntermentMissionStrStatic, nameClearFieldStaticIntermentFile)	
 end
 
 -------------------------------------------------------------------------------------------------------------------------------------
@@ -103,11 +110,11 @@ SEFDeletedStaticCount = 0
 
 --////LOAD UNITS
 --if ( trigger.misc.getUserFlag(9001) == 1 ) then -- JTF-1 progress saving active
-	if file_exists("ClearFieldUnitInterment.lua") then
+	if file_exists(nameClearFieldUnitIntermentFile) then
 		DeadUnitsList = SET_UNIT:New():FilterCoalitions("red"):FilterCategories("ground"):FilterActive(true):FilterStart()
 		DeadUnitsList:HandleEvent(EVENTS.Dead)
 		
-		dofile("ClearFieldUnitInterment.lua")
+		dofile(nameClearFieldUnitIntermentFile)
 		
 		UnitIntermentTableLength = SEF_GetTableLength(ClearFieldUnitInterment)
 		--trigger.action.outText("Unit Table Length Is "..UnitIntermentTableLength, 15)
@@ -129,9 +136,9 @@ SEFDeletedStaticCount = 0
 		UnitIntermentTableLength = 0	
 	end
 	--////LOAD STATICS
-	if file_exists("ClearFieldStaticInterment_121.lua") then
+	if file_exists(nameClearFieldStaticIntermentFile) then
 		
-		dofile("ClearFieldStaticInterment_121.lua")
+		dofile(nameClearFieldStaticIntermentFile)
 			
 		StaticIntermentTableLength = SEF_GetTableLength(ClearFieldStaticInterment)
 		--trigger.action.outText("Static Table Length Is "..StaticIntermentTableLength, 15)
