@@ -212,20 +212,20 @@ function SEF_REDSQUADRONSMULTIPLAYER()
 
 
 	--////SQUADRON OVERHEAD (1.0-1.5)
-	REDA2ADispatcher:SetSquadronOverhead( "Alpha", 1.0)
-	REDA2ADispatcher:SetSquadronOverhead( "Beta", 1.0)
-	REDA2ADispatcher:SetSquadronOverhead( "Gamma", 1.0)
-	REDA2ADispatcher:SetSquadronOverhead( "Delta", 1.0)
-	REDA2ADispatcher:SetSquadronOverhead( "Theta", 1.0)
-	REDA2ADispatcher:SetSquadronOverhead( "Omicron", 1.0)
+	REDA2ADispatcher:SetSquadronOverhead( "Alpha", 0.75) -- default 1.0
+	REDA2ADispatcher:SetSquadronOverhead( "Beta", 0.75)
+	REDA2ADispatcher:SetSquadronOverhead( "Gamma", 0.75)
+	REDA2ADispatcher:SetSquadronOverhead( "Delta", 0.75)
+	REDA2ADispatcher:SetSquadronOverhead( "Theta", 0.75)
+	REDA2ADispatcher:SetSquadronOverhead( "Omicron", 0.75)
 
 	--////SQUADRON GROUPING
-	REDA2ADispatcher:SetSquadronGrouping( "Alpha", 2 )
-	REDA2ADispatcher:SetSquadronGrouping( "Beta", 2 )
-	REDA2ADispatcher:SetSquadronGrouping( "Gamma", 2 )
-	REDA2ADispatcher:SetSquadronGrouping( "Delta", 2 )
-	REDA2ADispatcher:SetSquadronGrouping( "Theta", 2 )
-	REDA2ADispatcher:SetSquadronGrouping( "Omicron", 2 )
+	REDA2ADispatcher:SetSquadronGrouping( "Alpha", 1 ) -- default 2
+	REDA2ADispatcher:SetSquadronGrouping( "Beta", 1 )
+	REDA2ADispatcher:SetSquadronGrouping( "Gamma", 1 )
+	REDA2ADispatcher:SetSquadronGrouping( "Delta", 1 )
+	REDA2ADispatcher:SetSquadronGrouping( "Theta", 1.5 )
+	REDA2ADispatcher:SetSquadronGrouping( "Omicron", 1.5 )
 
 	--////TAKEOFF	
 	--REDA2ADispatcher:SetSquadronTakeoffFromParkingHot( "Alpha" )
@@ -242,12 +242,12 @@ function SEF_REDSQUADRONSMULTIPLAYER()
 	--REDA2ADispatcher:SetSquadronTakeoffFromRunway( "Theta" )
 	--REDA2ADispatcher:SetSquadronTakeoffInAir( "Omicron" )
 	
-	REDA2ADispatcher:SetSquadronTakeoffInAir( "Alpha" )
-	REDA2ADispatcher:SetSquadronTakeoffInAir( "Beta" )
-	REDA2ADispatcher:SetSquadronTakeoffInAir( "Gamma" )
-	REDA2ADispatcher:SetSquadronTakeoffInAir( "Delta" )
-	REDA2ADispatcher:SetSquadronTakeoffInAir( "Theta" )
-	REDA2ADispatcher:SetSquadronTakeoffInAir( "Omicron" )
+	REDA2ADispatcher:SetSquadronTakeoffInAir( "Alpha", 350 )
+	REDA2ADispatcher:SetSquadronTakeoffInAir( "Beta", 350 )
+	REDA2ADispatcher:SetSquadronTakeoffInAir( "Gamma", 350 )
+	REDA2ADispatcher:SetSquadronTakeoffInAir( "Delta", 350 )
+	REDA2ADispatcher:SetSquadronTakeoffInAir( "Theta", 350 )
+	REDA2ADispatcher:SetSquadronTakeoffInAir( "Omicron", 350 )
 
 	--////LANDING
 	REDA2ADispatcher:SetSquadronLandingAtRunway( "Alpha" )
@@ -279,22 +279,22 @@ function SEF_REDSQUADRONSMULTIPLAYER()
 
 	--ZONE 1 / Alpha / Gudauta
 	REDA2ADispatcher:SetSquadronCap( "Alpha", CAPZoneRed1, 1000, 11000, 750, 900, 800, 1200, "BARO" )
-	REDA2ADispatcher:SetSquadronCapInterval( "Alpha", 1, 450, 900, 1 )
+	REDA2ADispatcher:SetSquadronCapInterval( "Alpha", 1, 600, 1200, 1 )
 	--ZONE 2 / Beta / Nalchik
 	REDA2ADispatcher:SetSquadronCap( "Beta", CAPZoneRed2, 4000, 11000, 750, 900, 800, 1200, "BARO" )
-	REDA2ADispatcher:SetSquadronCapInterval( "Beta", 1, 450, 900, 1 )
+	REDA2ADispatcher:SetSquadronCapInterval( "Beta", 1, 600, 1200, 1 )
 	--ZONE 3 / Gamma / Beslan
 	REDA2ADispatcher:SetSquadronCap( "Gamma", CAPZoneRed3, 4000, 11000, 750, 900, 800, 1200, "BARO" )
-	REDA2ADispatcher:SetSquadronCapInterval( "Gamma", 1, 450, 900, 1 )  
+	REDA2ADispatcher:SetSquadronCapInterval( "Gamma", 1, 600, 1200, 1 )  
 	--ZONE 4 / Delta / Sochi
 	REDA2ADispatcher:SetSquadronCap( "Delta", CAPZoneRed4, 1000, 11000, 750, 900, 800, 1200, "BARO" )
-	REDA2ADispatcher:SetSquadronCapInterval( "Delta", 1, 450, 900, 1 )
+	REDA2ADispatcher:SetSquadronCapInterval( "Delta", 1, 600, 1200, 1 )
 	--ZONE 5 / Theta / Admiral Kuznetsov
 	REDA2ADispatcher:SetSquadronCap( "Theta", CAPZoneRedCarrier, 1000, 11000, 750, 900, 800, 1200, "BARO" )
-	REDA2ADispatcher:SetSquadronCapInterval( "Theta", 1, 450, 900, 1 )
+	REDA2ADispatcher:SetSquadronCapInterval( "Theta", 1, 600, 1200, 1 )
 	--ZONE 6 / Omicron / Mineralnye-Vody
 	REDA2ADispatcher:SetSquadronCap( "Omicron", CAPZoneRed6, 4000, 11000, 750, 900, 800, 1200, "BARO" )
-	REDA2ADispatcher:SetSquadronCapInterval( "Omicron", 1, 450, 900, 1 )	
+	REDA2ADispatcher:SetSquadronCapInterval( "Omicron", 1, 600, 1200, 1 )	
 end
 
 function SEF_REDSQUADRONSSINGLEPLAYER()
