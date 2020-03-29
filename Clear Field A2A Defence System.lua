@@ -212,20 +212,20 @@ function SEF_REDSQUADRONSMULTIPLAYER()
 
 
 	--////SQUADRON OVERHEAD (1.0-1.5)
-	REDA2ADispatcher:SetSquadronOverhead( "Alpha", 0.75) -- default 1.0
-	REDA2ADispatcher:SetSquadronOverhead( "Beta", 0.75)
-	REDA2ADispatcher:SetSquadronOverhead( "Gamma", 0.75)
-	REDA2ADispatcher:SetSquadronOverhead( "Delta", 0.75)
-	REDA2ADispatcher:SetSquadronOverhead( "Theta", 0.75)
-	REDA2ADispatcher:SetSquadronOverhead( "Omicron", 0.75)
+	REDA2ADispatcher:SetSquadronOverhead( "Alpha", 0.5) -- default 1.0
+	REDA2ADispatcher:SetSquadronOverhead( "Beta", 0.5)
+	REDA2ADispatcher:SetSquadronOverhead( "Gamma", 0.5)
+	REDA2ADispatcher:SetSquadronOverhead( "Delta", 0.5)
+	REDA2ADispatcher:SetSquadronOverhead( "Theta", 0.5)
+	REDA2ADispatcher:SetSquadronOverhead( "Omicron", 0.5)
 
 	--////SQUADRON GROUPING
 	REDA2ADispatcher:SetSquadronGrouping( "Alpha", 1 ) -- default 2
 	REDA2ADispatcher:SetSquadronGrouping( "Beta", 1 )
 	REDA2ADispatcher:SetSquadronGrouping( "Gamma", 1 )
 	REDA2ADispatcher:SetSquadronGrouping( "Delta", 1 )
-	REDA2ADispatcher:SetSquadronGrouping( "Theta", 1.5 )
-	REDA2ADispatcher:SetSquadronGrouping( "Omicron", 1.5 )
+	REDA2ADispatcher:SetSquadronGrouping( "Theta", 1 )
+	REDA2ADispatcher:SetSquadronGrouping( "Omicron", 1 )
 
 	--////TAKEOFF	
 	--REDA2ADispatcher:SetSquadronTakeoffFromParkingHot( "Alpha" )
