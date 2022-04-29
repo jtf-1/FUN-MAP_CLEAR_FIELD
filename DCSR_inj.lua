@@ -938,7 +938,7 @@ else
     DCSR.enableForAI = false -- set to false to disable AI units from being rescued.    
 end
 
-DCSR.enableForRED = true -- enable for red side
+DCSR.enableForRED = false -- enable for red side
 
 DCSR.enableForBLUE = true -- enable for blue side
 
@@ -951,7 +951,7 @@ DCSR.redsmokecolor = 1 -- Color of smokemarker for red side, 0 is green, 1 is re
 
 DCSR.requestdelay = 5 -- Time in seconds before the survivors will request Medevac -- QUIIIIIIIII
 
-DCSR.coordtype = 0 -- Use Lat/Long DDM (0), Lat/Long DMS (1), MGRS (2), Bullseye imperial (3) or Bullseye metric (4) for coordinates.
+DCSR.coordtype = 2 -- Use Lat/Long DDM (0), Lat/Long DMS (1), MGRS (2), Bullseye imperial (3) or Bullseye metric (4) for coordinates.
 DCSR.coordaccuracy = 1 -- Precision of the reported coordinates, see MIST-docs at http://wiki.hoggit.us/view/GetMGRSString
 -- only applies to _non_ bullseye coords
 
