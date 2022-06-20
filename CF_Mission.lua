@@ -18,7 +18,7 @@ SHELLGROUPNAME 				= ""
 ARCOGROUPNAME 				= ""
 
 TomahawkMissilesAvailable 	= 0
-TomahawkCooldown			= 10800
+TomahawkCooldown			= 100000
 
 --////MISSION LOGIC FUNCTIONS
 
@@ -237,9 +237,9 @@ function SEF_InitializeMissionTable()
 		TargetBriefing = "Mission Update \nPrimary Objective - Destroy The Early Warning Radar Located At Adzhapsha\nGudauta Sector - Grid FH47",
 	}
 	OperationClearFieldMkII_AG[5] = {				
-		TargetName = "Adzhapsha - SA-10",
+		TargetName = "Adzhapsha - SA-2",
 		TargetStatic = false,
-		TargetBriefing = "Mission Update \nPrimary Objective - Destroy The SA-10 Site Located At Adzhapsha\nGudauta Sector - Grid FH47",
+		TargetBriefing = "Mission Update \nPrimary Objective - Destroy The SA-2 Site Located At Adzhapsha\nGudauta Sector - Grid FH47",
 	}
 	OperationClearFieldMkII_AG[6] = {				
 		TargetName = "Anapskaya - SA-10",
@@ -427,9 +427,9 @@ function SEF_InitializeMissionTable()
 		TargetBriefing = "Mission Update \nPrimary Objective - Destroy The SA-2 Site Located At Gudauta\nGudauta Sector - Grid FH37",
 	}
 	OperationClearFieldMkII_AG[43] = {				
-		TargetName = "Gulripshi - SA-10",
+		TargetName = "Gulripshi - SA-3",
 		TargetStatic = false,
-		TargetBriefing = "Mission Update \nPrimary Objective - Destroy The SA-10 Site Located At Gulripshi\nSukhumi-Babushara Sector - Grid FH75",
+		TargetBriefing = "Mission Update \nPrimary Objective - Destroy The SA-3 Site Located At Gulripshi\nSukhumi-Babushara Sector - Grid FH75",
 	}
 	OperationClearFieldMkII_AG[44] = {				
 		TargetName = "Gvandra - AAA",
@@ -4214,7 +4214,7 @@ function SEF_RadioMenuSetup()
 	--////Setup Menu Option To Get The Current Objective
 	missionCommands.addCommandForCoalition(coalition.side.BLUE, "Check Current Objective", Objective_Options_menu, function() CheckObjectiveRequest() end, nil)
 	--////Target Report to get target numbers and coordinates 
-	missionCommands.addCommandForCoalition(coalition.side.BLUE, "Target Report", Objective_Options_menu, function() TargetReport() end, nil)
+	--missionCommands.addCommandForCoalition(coalition.side.BLUE, "Target Report", Objective_Options_menu, function() TargetReport() end, nil)
 	--////Drop Smoke On The Target
 	missionCommands.addCommandForCoalition(coalition.side.BLUE, "Smoke Current Objective", Objective_Options_menu, function() SEF_TargetSmoke() end, nil)
 	
@@ -4236,6 +4236,7 @@ function SEF_RadioMenuSetup()
 	ClearFieldMkIIClearCarrierTankers  = missionCommands.addCommandForCoalition(coalition.side.BLUE, "Clear Carrier Deck Of Tankers", ClearFieldMkIIOptions, function() SEF_ClearAITankersFromCarrierDeck() end, nil)
 	ClearFieldMkIIPhaseCheck  = missionCommands.addCommandForCoalition(coalition.side.BLUE, "Check Battle Phase", ClearFieldMkIIOptions, function() SEF_BattlePhaseCheck() end, nil)
 	ClearFieldMkIISkipScenario  = missionCommands.addCommandForCoalition(coalition.side.BLUE, "Skip This Mission", ClearFieldMkIIOptions, function() SEF_SkipScenario() end, nil)	
+
 	
 	--[[
 	AIRBASE.Caucasus.Anapa_Vityazevo,
@@ -5095,7 +5096,7 @@ function SEF_USAFAWACS_SPAWN()
 	else
 		
 		local SpawnZone = AIRBASE:FindByName(AIRBASE.Caucasus.Kutaisi):GetZone()
-		local OrbitZone1 = ZONE:FindByName("AWACS South Orbit Point 1")
+		local OrbitZone1 = ZONE:FindByName("AWACS North Orbit Point 1")
 		local OrbitZone2 = ZONE:FindByName("AWACS South Orbit Point 2")
 			
 		local DepartureZoneVec2 = SpawnZone:GetVec2()
@@ -5582,8 +5583,8 @@ function SEF_TEXACO_SPAWN()
 		env.info("TEXACO Spawned Phase 1/2", false)
 	else
 		local SpawnZone = AIRBASE:FindByName(AIRBASE.Caucasus.Kutaisi):GetZone()
-		local OrbitZone1 = ZONE:FindByName("Texaco South Orbit Point 1")
-		local OrbitZone2 = ZONE:FindByName("Texaco South Orbit Point 2")
+		local OrbitZone1 = ZONE:FindByName("Texaco North Orbit Point 1")
+		local OrbitZone2 = ZONE:FindByName("Texaco North Orbit Point 2")
 			
 		local DepartureZoneVec2 = SpawnZone:GetVec2()
 		local OrbitZone1Vec2 	= OrbitZone1:GetVec2()
@@ -6074,8 +6075,8 @@ function SEF_SHELL_SPAWN()
 	else
 		
 		local SpawnZone = AIRBASE:FindByName(AIRBASE.Caucasus.Kutaisi):GetZone()
-		local OrbitZone1 = ZONE:FindByName("Shell South Orbit Point 1")
-		local OrbitZone2 = ZONE:FindByName("Shell South Orbit Point 2")
+		local OrbitZone1 = ZONE:FindByName("Shell North Orbit Point 1")
+		local OrbitZone2 = ZONE:FindByName("Shell North Orbit Point 2")
 			
 		local DepartureZoneVec2 = SpawnZone:GetVec2()
 		local OrbitZone1Vec2 	= OrbitZone1:GetVec2()

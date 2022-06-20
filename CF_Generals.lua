@@ -72,7 +72,7 @@ SEF_AIRBASES = {
 	AIRBASE.Caucasus.Beslan,
 	AIRBASE.Caucasus.Gelendzhik,
 	AIRBASE.Caucasus.Gudauta,
-	AIRBASE.Caucasus.Kobuleti,
+	--AIRBASE.Caucasus.Kobuleti,
 	AIRBASE.Caucasus.Krasnodar_Center,
 	AIRBASE.Caucasus.Krasnodar_Pashkovsky,
 	AIRBASE.Caucasus.Krymsk,
@@ -86,8 +86,8 @@ SEF_AIRBASES = {
 	AIRBASE.Caucasus.Sochi_Adler,
 	AIRBASE.Caucasus.Soganlug,
 	AIRBASE.Caucasus.Sukhumi_Babushara,
-	AIRBASE.Caucasus.Tbilisi_Lochini,
-	AIRBASE.Caucasus.Vaziani
+	--AIRBASE.Caucasus.Tbilisi_Lochini,
+	--AIRBASE.Caucasus.Vaziani
 }
 
 SEF_OFFLIMITSAIRBASESFORRED 	= { AIRBASE.Caucasus.Kutaisi, AIRBASE.Caucasus.Senaki_Kolkhi, AIRBASE.Caucasus.Batumi, AIRBASE.Caucasus.Tbilisi_Lochini, AIRBASE.Caucasus.Kobuleti }

@@ -1,6 +1,6 @@
 --//////////////////////////////////////////////////////////
 -- Name: Operation Clear Field Escalation - Templates
--- Author: Surrexen    ༼ つ ◕_◕ ༽つ    (づ｡◕‿◕｡)づ
+-- Author: Surrexen    à¼¼ ã�¤ â—•_â—• à¼½ã�¤    (ã�¥ï½¡â—•â€¿â—•ï½¡)ã�¥
 --//////////////////////////////////////////////////////////
 
 --////AIRFRAMES
@@ -2966,11 +2966,11 @@ local USAF_AIR_TEMPLATES = {
 						}, -- end of [1]
 						[2] = 
 						{
-							["CLSID"] = "<CLEAN>",
+							["CLSID"] = "LAU-115_2*LAU-127_AIM-120C",
 						}, -- end of [2]
 						[3] = 
 						{
-							["CLSID"] = "LAU-115_2*LAU-127_AIM-120C",
+							["CLSID"] = "{FPU_8A_FUEL_TANK}",
 						}, -- end of [3]
 						[4] = 
 						{
@@ -2986,11 +2986,11 @@ local USAF_AIR_TEMPLATES = {
 						}, -- end of [6]
 						[7] = 
 						{
-							["CLSID"] = "LAU-115_2*LAU-127_AIM-120C",
+							["CLSID"] = "{FPU_8A_FUEL_TANK}",
 						}, -- end of [7]
 						[8] = 
 						{
-							["CLSID"] = "<CLEAN>",
+							["CLSID"] = "LAU-115_2*LAU-127_AIM-120C",
 						}, -- end of [8]
 						[9] = 
 						{

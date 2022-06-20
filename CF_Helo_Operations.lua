@@ -2893,7 +2893,7 @@ else
 	ConstructedItemsTableLength = 0		
 end
 
-timer.scheduleFunction(SEF_SaveConstructedItemsTable, nil, timer.getTime() + SaveScheduleUnits)
+--timer.scheduleFunction(SEF_SaveConstructedItemsTable, nil, timer.getTime() + SaveScheduleUnits)
 
 --////END MAIN
 --------------------------------------------------------------------------------------------------------------------------------------------------
