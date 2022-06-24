@@ -120,15 +120,15 @@ ctld_c.beaconMaxFreq            = 115000000 -- beware, changing this could affec
 
 --pickupZones = { "Zone name or Ship Unit Name", "smoke color", "limit (-1 unlimited)", "ACTIVE (yes/no)", "side (0 = Both sides / 1 = Red / 2 = Blue )", flag number (optional) }
 ctld_c.pickupZones = {
-    { "pickzone1", "orange", -1, "yes", 0 },
-    { "pickzone2", "orange", -1, "yes", 0 },
-    { "pickzone3", "orange", -1, "yes", 0 },
-    { "pickzone4", "none", -1, "yes", 0 },
-    { "pickzone5", "none", -1, "yes", 0 },
-    { "pickzone6", "none", -1, "yes", 0 },
-    { "pickzone7", "none", -1, "yes", 0 },
-    { "pickzone8", "orange", -1, "yes", 0 },
-    { "pickzone9", "orange", -1, "yes", 0 },
+    { "pickzone1", "none", -1, "yes", 0 }, --used
+    { "pickzone2", "none", -1, "yes", 0 }, --used
+    { "pickzone3", "orange", -1, "yes", 0 }, --used
+    { "pickzone4", "none", -1, "yes", 0 }, --used
+    { "pickzone5", "none", -1, "yes", 0 }, --used
+    { "pickzone6", "none", -1, "yes", 0 }, --used
+    { "pickzone7", "none", -1, "yes", 0 }, --used
+    { "pickzone8", "none", -1, "yes", 0 }, --used
+    { "pickzone9", "none", -1, "yes", 0 }, --used
     { "pickzone10", "orange", -1, "yes", 0 },
     { "pickzone11", "orange", -1, "yes", 0 },
     { "pickzone12", "orange", -1, "yes", 0 },
@@ -557,7 +557,7 @@ ctld_c.logisticUnits = {
 ctld_c.vehicleTransportEnabled = {
     "76MD", -- the il-76 mod doesnt use a normal - sign so il-76md wont match... !!!! GRR
     "C-130",
-    "hercules",
+    "Hercules",
 }
 
 
@@ -582,6 +582,8 @@ ctld_c.unitLoadLimits = {
     ["Mi-24P"] = 8, -- check if ok
     ["AH-64D_BLK_II"] = 0, -- check if ok
     ["UH-60L"] = 14,
+    ["Hercules"] = 30,
+       
 }
 
 -- ************** Allowable actions for UNIT TYPES ******************
@@ -605,6 +607,7 @@ ctld_c.unitActions = {
     --["SA342M"] = {crates=false, troops=true},
     ["Ka-50"] = {crates=true, troops=false},
     ["AH-64D_BLK_II"] = {crates=true, troops=false},
+    ["Hercules"] = {crates=true, troops=true},    
 }
 
 -- ************** INFANTRY GROUPS FOR PICKUP ******************

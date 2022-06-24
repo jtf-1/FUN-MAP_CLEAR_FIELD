@@ -944,7 +944,7 @@ function SEF_REDSQUADRON1_DEPLOYMENT()
 	--ALPHA
 	if ( Airbase.getByName(AIRBASE.Caucasus.Gudauta):getCoalition() == 1 ) then
 		--Case 1: Set Alpha To Gudauta and Patrol Gudauta
-		AlphaPrimaryAirbase = AIRBASE.Caucasus.Gudauta
+		AlphaPrimaryAirbase = AIRBASE.Caucasus.Sochi_Adler
 		AlphaDestinationAirbase = AIRBASE.Caucasus.Gudauta
 	elseif ( Airbase.getByName(AIRBASE.Caucasus.Gudauta):getCoalition() ~= 1 and Airbase.getByName(AIRBASE.Caucasus.Sochi_Adler):getCoalition() == 1 ) then
 		--Case 2: Set Alpha To Sochi and Patrol Gudauta

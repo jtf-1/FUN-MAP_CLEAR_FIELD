@@ -4539,7 +4539,7 @@ local USAF_AIR_TEMPLATES = {
 		["name"] = "USAF AWACS",
 		["communication"] = true,	
 		["modulation"] = 0,
-		["frequency"] = 266,
+		["frequency"] = 282.025,
 	},	
 	--TEXACO KC135MPRS
 	[17] = {		
@@ -4590,7 +4590,7 @@ local USAF_AIR_TEMPLATES = {
 		["name"] = "22nd ARW Texaco",
 		["communication"] = true,	
 		["modulation"] = 0,
-		["frequency"] = 267,
+		["frequency"] = 317.775,
 	},
 	--SHELL KC135
 	[18] = {		
@@ -4641,7 +4641,7 @@ local USAF_AIR_TEMPLATES = {
 		["name"] = "22nd ARW Shell",
 		["communication"] = true,	
 		["modulation"] = 0,
-		["frequency"] = 268,
+		["frequency"] = 276.100,
 	},
 	--ARCO S-3B
 	[19] = {		

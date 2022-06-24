@@ -78,7 +78,8 @@ if not DCSR.aircraftType then
     DCSR.aircraftType["UH-1H"] = 8
     DCSR.aircraftType["Mi-8MT"] = 16
     DCSR.aircraftType["Mi-24P"] = 8
-	DCSR.aircraftType["UH-60L"] = 16
+	  DCSR.aircraftType["UH-60L"] = 16
+	  DCSR.aircraftType["Hercules"] = 50
 end
 
 
@@ -820,6 +821,17 @@ DCSR.csarFixedUnits =  {
     "helicargo23",
     "helicargo24",
     "helicargo25",
+    
+    "transport1",
+    "transport2",
+    "transport3",
+    "transport4",
+    "transport5",
+    "transport6",
+    "transport7",
+    "transport8",
+    "transport9",
+    "transport10",
 
     "MEDEVAC #1",
     "MEDEVAC #2",

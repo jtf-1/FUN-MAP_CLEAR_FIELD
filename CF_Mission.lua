@@ -5097,7 +5097,7 @@ function SEF_USAFAWACS_SPAWN()
 		
 		local SpawnZone = AIRBASE:FindByName(AIRBASE.Caucasus.Kutaisi):GetZone()
 		local OrbitZone1 = ZONE:FindByName("AWACS North Orbit Point 1")
-		local OrbitZone2 = ZONE:FindByName("AWACS South Orbit Point 2")
+		local OrbitZone2 = ZONE:FindByName("AWACS North Orbit Point 2")
 			
 		local DepartureZoneVec2 = SpawnZone:GetVec2()
 		local OrbitZone1Vec2 	= OrbitZone1:GetVec2()
@@ -5423,7 +5423,7 @@ function SEF_TEXACO_SPAWN()
 																	["AA"] = true,
 																	["callsign"] = "TXC",
 																	["modeChannel"] = "Y",
-																	["channel"] = 13,
+																	["channel"] = 107,
 																	["system"] = 5,
 																	["unitId"] = TEXACOUNITID,		
 																	["bearing"] = true,
@@ -5658,7 +5658,7 @@ function SEF_TEXACO_SPAWN()
 																	["AA"] = true,
 																	["callsign"] = "TXC",
 																	["modeChannel"] = "Y",
-																	["channel"] = 13,
+																	["channel"] = 107,
 																	["system"] = 5,
 																	["unitId"] = TEXACOUNITID,		
 																	["bearing"] = true,
@@ -5914,7 +5914,7 @@ function SEF_SHELL_SPAWN()
 																	["AA"] = true,
 																	["callsign"] = "SHL",
 																	["modeChannel"] = "Y",
-																	["channel"] = 14,
+																	["channel"] = 101,
 																	["system"] = 5,
 																	["unitId"] = SHELLUNITID, 			
 																	["bearing"] = true,
@@ -6150,7 +6150,7 @@ function SEF_SHELL_SPAWN()
 																	["AA"] = true,
 																	["callsign"] = "SHL",
 																	["modeChannel"] = "Y",
-																	["channel"] = 14,
+																	["channel"] = 101,
 																	["system"] = 5,
 																	["unitId"] = SHELLUNITID, 			
 																	["bearing"] = true,
