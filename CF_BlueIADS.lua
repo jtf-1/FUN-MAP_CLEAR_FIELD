@@ -6,13 +6,16 @@ env.info("BLUE IADS Loading", false)
 
 function SEF_ReaddIADS ()
   env.info("Adding Respawns to IADS", false)
-  blueIADS = SkynetIADS:create('Blue IADS')
+  blueIADS = SkynetIADS:create('BlueSAM')
   blueIADS:setUpdateInterval(5)
   blueIADS:addEarlyWarningRadarsByPrefix('blueEWR')
   blueIADS:addSAMSitesByPrefix('bSAM')
-  --blueIADS:getSAMSitesByNatoName('Patriot'):setActAsEW(true)
-  --blueIADS:getSAMSitesByNatoName('Hawk'):setEngagementZone(SkynetIADSAbstractRadarElement.GO_LIVE_WHEN_IN_SEARCH_RANGE)
-  blueIADS:addRadioMenu()  
+  blueIADS:getSAMSitesByNatoName('Patriot'):setActAsEW(true)
+  blueIADS:getSAMSitesByNatoName('Hawk'):setEngagementZone(SkynetIADSAbstractRadarElement.GO_LIVE_WHEN_IN_SEARCH_RANGE)
+  blueIADS:getSAMSitesByNatoName('NASAM'):setEngagementZone(SkynetIADSAbstractRadarElement.GO_LIVE_WHEN_IN_SEARCH_RANGE)
+  
+  --blueIADS:addRadioMenu()  
+  
   blueIADS:activate()    
   env.info("Respawns integrated into IADS", false)
   timer.scheduleFunction(SEF_ReaddIADS, nil, timer.getTime() + 1800)  --1800

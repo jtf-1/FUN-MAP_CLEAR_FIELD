@@ -3,14 +3,18 @@ env.info("Patrol Loading", false)
 -- EAST CORRIDOR --
 -- ============= --
 
-EastCorridor = GROUP:FindByName("rsam - East Corridor Air Defense")
+if Group.getByName("rsam - East Corridor Air Defense")
+  then EastCorridor = GROUP:FindByName("rsam - East Corridor Air Defense")
+  else
+end
+
 EastCorridor1 = ZONE:FindByName("EastCorridor1")
 EastCorridor2 = ZONE:FindByName("EastCorridor2")
 
-if EastCorridor:IsAlive() then EastCorridor:TaskRouteToZone(EastCorridor1, false, 6, "On Road"):OptionAlarmStateRed():OptionDisperseOnAttack(0) end -- send group to fist zone and start loop
+if Group.getByName("rsam - East Corridor Air Defense") then EastCorridor:TaskRouteToZone(EastCorridor1, false, 6, "On Road"):OptionAlarmStateRed():OptionDisperseOnAttack(0) end -- send group to fist zone and start loop
 
 function SEF_EastCorridor()
-  if EastCorridor:IsAlive() then 
+  if Group.getByName("rsam - East Corridor Air Defense") then 
     if EastCorridor:IsPartlyOrCompletelyInZone(EastCorridor1)
       then 
         EastCorridor:ClearTasks()
@@ -26,14 +30,18 @@ end
 -- WEST CORRIDOR --
 -- ============= --
 
-WestCorridor = GROUP:FindByName("rsam - West Corridor Air Defense")
+if Group.getByName("rsam - West Corridor Air Defense")
+  then WestCorridor = GROUP:FindByName("rsam - West Corridor Air Defense")
+  else
+end
+
 WestCorridor1 = ZONE:FindByName("WestCorridor1")
 WestCorridor2 = ZONE:FindByName("WestCorridor2")
 
-if WestCorridor:IsAlive() then WestCorridor:TaskRouteToZone(WestCorridor1, false, 6, "On Road"):OptionAlarmStateRed():OptionDisperseOnAttack(0) end -- send group to fist zone and start loop
+if Group.getByName("rsam - West Corridor Air Defense") then WestCorridor:TaskRouteToZone(WestCorridor1, false, 6, "On Road"):OptionAlarmStateRed():OptionDisperseOnAttack(0) end -- send group to fist zone and start loop
 
 function SEF_WestCorridor()
-  if WestCorridor:IsAlive()then  
+  if Group.getByName("rsam - West Corridor Air Defense") then  
     if WestCorridor:IsPartlyOrCompletelyInZone(WestCorridor1)
       then 
         WestCorridor:ClearTasks()
@@ -49,15 +57,19 @@ end
 -- Gali - Convoy --
 -- ============= --
 
-Gali = GROUP:FindByName("Gali - Convoy")
+if Group.getByName("Gali - Convoy")
+  then Gali = GROUP:FindByName("Gali - Convoy")
+  else
+end
+
 Gali1 = ZONE:FindByName("Gali1")
 Gali2 = ZONE:FindByName("Gali2")
 Gali3 = ZONE:FindByName("Gali3")
 
-if Gali:IsAlive() then Gali:TaskRouteToZone(Gali1, false, 7, "On Road"):OptionAlarmStateRed():OptionDisperseOnAttack(0) end -- send group to fist zone and start loop
+if Group.getByName("Gali - Convoy") then Gali:TaskRouteToZone(Gali1, false, 7, "On Road"):OptionAlarmStateRed():OptionDisperseOnAttack(0) end -- send group to fist zone and start loop
 
 function SEF_Gali() 
-  if Gali:IsAlive() then 
+  if Group.getByName("Gali - Convoy") then 
     if Gali:IsPartlyOrCompletelyInZone(Gali1)
       then 
         Gali:ClearTasks()
@@ -77,15 +89,19 @@ end
 -- Karaleti - Armor --
 -- ================ --
 
-Karaleti = GROUP:FindByName("Karaleti - Armor")
+if Group.getByName("Karaleti - Armor")
+  then Karaleti = GROUP:FindByName("Karaleti - Armor")
+  else
+end
+
 Karaleti1 = ZONE:FindByName("Karaleti1")
 Karaleti2 = ZONE:FindByName("Karaleti2")
 Karaleti3 = ZONE:FindByName("Karaleti3")
 
-if Karaleti:IsAlive() then Karaleti:TaskRouteToZone(Karaleti1, false, 8, "On Road"):OptionAlarmStateRed():OptionDisperseOnAttack(0) end -- send group to fist zone and start loop
+if Group.getByName("Karaleti - Armor") then Karaleti:TaskRouteToZone(Karaleti1, false, 8, "On Road"):OptionAlarmStateRed():OptionDisperseOnAttack(0) end -- send group to fist zone and start loop
 
 function SEF_Karaleti()
-  if Karaleti:IsAlive() then 
+  if Group.getByName("Karaleti - Armor") then 
     if Karaleti:IsPartlyOrCompletelyInZone(Karaleti1)
       then 
         Karaleti:ClearTasks()
@@ -105,15 +121,19 @@ end
 -- Tskhinvali - Convoy --
 -- =================== --
 
-Tskhinvali = GROUP:FindByName("Tskhinvali - Convoy")
+if Group.getByName("Tskhinvali - Convoy")
+  then Tskhinvali = GROUP:FindByName("Tskhinvali - Convoy")
+  else
+end
+
 Tskhinvali1 = ZONE:FindByName("Tskhinvali1")
 Tskhinvali2 = ZONE:FindByName("Tskhinvali2")
 Tskhinvali3 = ZONE:FindByName("Tskhinvali3")
 
-if Tskhinvali:IsAlive() then Tskhinvali:TaskRouteToZone(Tskhinvali1, false, 6, "On Road"):OptionAlarmStateRed():OptionDisperseOnAttack(0) end -- send group to fist zone and start loop
+if Group.getByName("Tskhinvali - Convoy") then Tskhinvali:TaskRouteToZone(Tskhinvali1, false, 6, "On Road"):OptionAlarmStateRed():OptionDisperseOnAttack(0) end -- send group to fist zone and start loop
 
 function SEF_Tskhinvali()
-  if Tskhinvali:IsAlive() then 
+  if Group.getByName("Tskhinvali - Convoy") then 
     if Tskhinvali:IsPartlyOrCompletelyInZone(Tskhinvali1)
       then 
         Tskhinvali:ClearTasks()
@@ -133,15 +153,19 @@ end
 -- Chuburhindzhi - Armor --
 -- =================== --
 
-Chuburhindzhi = GROUP:FindByName("Chuburhindzhi - Armor")
+if Group.getByName("Chuburhindzhi - Armor")
+  then Chuburhindzhi = GROUP:FindByName("Chuburhindzhi - Armor")
+  else
+end
+
 Chuburhindzhi1 = ZONE:FindByName("Chuburhindzhi1")
 Chuburhindzhi2 = ZONE:FindByName("Chuburhindzhi2")
 Chuburhindzhi3 = ZONE:FindByName("Chuburhindzhi3")
 
-if Chuburhindzhi:IsAlive() then Chuburhindzhi:TaskRouteToZone(Chuburhindzhi1, false, 10, "On Road"):OptionAlarmStateRed():OptionDisperseOnAttack(0) end -- send group to fist zone and start loop
+if Group.getByName("Chuburhindzhi - Armor") then Chuburhindzhi:TaskRouteToZone(Chuburhindzhi1, false, 10, "On Road"):OptionAlarmStateRed():OptionDisperseOnAttack(0) end -- send group to fist zone and start loop
 
 function SEF_Chuburhindzhi()
-  if Chuburhindzhi:IsAlive() then 
+  if Group.getByName("Chuburhindzhi - Armor") then 
     if Chuburhindzhi:IsPartlyOrCompletelyInZone(Chuburhindzhi1)
       then 
         Chuburhindzhi:ClearTasks()
@@ -161,16 +185,20 @@ end
 -- Sakasheti - Truck --
 -- ================= --
 
-Sakasheti = GROUP:FindByName("Sakasheti - Truck")
+if Group.getByName("Sakasheti - Truck")
+  then Sakasheti = GROUP:FindByName("Sakasheti - Truck")
+  else
+end
+
 Sakasheti1 = ZONE:FindByName("Sakasheti1")
 Sakasheti2 = ZONE:FindByName("Sakasheti2")
 Sakasheti3 = ZONE:FindByName("Sakasheti3")
 Sakasheti4 = ZONE:FindByName("Sakasheti4")
 
-if Sakasheti:IsAlive() then Sakasheti:TaskRouteToZone(Sakasheti1, false, 15, "Off Road"):OptionAlarmStateRed():OptionDisperseOnAttack(0) end -- send group to fist zone and start loop
+if Group.getByName("Sakasheti - Truck") then Sakasheti:TaskRouteToZone(Sakasheti1, false, 15, "Off Road"):OptionAlarmStateRed():OptionDisperseOnAttack(0) end -- send group to fist zone and start loop
 
 function SEF_Sakasheti()
-  if Sakasheti:IsAlive() then 
+  if Group.getByName("Sakasheti - Truck") then 
     if Sakasheti:IsPartlyOrCompletelyInZone(Sakasheti1)
       then 
         Sakasheti:ClearTasks()
@@ -194,16 +222,20 @@ end
 -- Sukhumi - Navy --
 -- ============== --
 
-Sukhumi = GROUP:FindByName("Sukhumi - Navy")
+if Group.getByName("Sukhumi - Navy")
+  then Sukhumi = GROUP:FindByName("Sukhumi - Navy")
+  else
+end
+
 Sukhumi1 = ZONE:FindByName("Sukhumi1")
 Sukhumi2 = ZONE:FindByName("Sukhumi2")
 Sukhumi3 = ZONE:FindByName("Sukhumi3")
 Sukhumi4 = ZONE:FindByName("Sukhumi4")
 
-if Sukhumi:IsAlive() then Sukhumi:TaskRouteToZone(Sukhumi1, false, 20):OptionAlarmStateRed() end -- send group to fist zone and start loop
+if Group.getByName("Sukhumi - Navy") then Sukhumi:TaskRouteToZone(Sukhumi1, false, 20):OptionAlarmStateRed() end -- send group to fist zone and start loop
 
 function SEF_Sukhumi()
-  if Sukhumi:IsAlive() then 
+  if Group.getByName("Sukhumi - Navy") then 
     if Sukhumi:IsPartlyOrCompletelyInZone(Sukhumi1)
       then 
         Sukhumi:ClearTasks()
@@ -227,14 +259,18 @@ end
 -- Gudauta - Navy --
 -- ============== --
 
-Gudauta = GROUP:FindByName("Gudauta - Navy")
+if Group.getByName("Gudauta - Navy")
+  then Gudauta = GROUP:FindByName("Gudauta - Navy")
+  else
+end
+
 Gudauta1 = ZONE:FindByName("Gudauta1")
 Gudauta2 = ZONE:FindByName("Gudauta2")
 
-if Gudauta:IsAlive() then Gudauta:TaskRouteToZone(Gudauta1, false, 15):OptionAlarmStateRed() end -- send group to fist zone and start loop
+if Group.getByName("Gudauta - Navy") then Gudauta:TaskRouteToZone(Gudauta1, false, 15):OptionAlarmStateRed() end -- send group to fist zone and start loop
 
 function SEF_Gudauta()
-  if Gudauta:IsAlive()then  
+  if Group.getByName("Gudauta - Navy") then  
     if Gudauta:IsPartlyOrCompletelyInZone(Gudauta1)
       then 
         Gudauta:ClearTasks()
@@ -250,14 +286,18 @@ end
 -- Sochi - Navy --
 -- ============ --
 
-Sochi = GROUP:FindByName("Sochi - Navy")
+if Group.getByName("Sochi - Navy")
+  then Sochi = GROUP:FindByName("Sochi - Navy")
+  else
+end
+
 Sochi1 = ZONE:FindByName("Sochi1")
 Sochi2 = ZONE:FindByName("Sochi2")
 
-if Sochi:IsAlive() then Sochi:TaskRouteToZone(Sochi1, false, 15):OptionAlarmStateRed() end -- send group to fist zone and start loop
+if Group.getByName("Sochi - Navy") then Sochi:TaskRouteToZone(Sochi1, false, 15):OptionAlarmStateRed() end -- send group to fist zone and start loop
 
 function SEF_Sochi()
-  if Sochi:IsAlive()then  
+  if Group.getByName("Sochi - Navy") then  
     if Sochi:IsPartlyOrCompletelyInZone(Sochi1)
       then 
         Sochi:ClearTasks()
@@ -273,16 +313,20 @@ end
 -- Pitsunda - Cargo Ship --
 -- ===================== --
 
-Pitsunda = GROUP:FindByName("Pitsunda - Cargo Ship")
+if Group.getByName("Pitsunda - Cargo Ship")
+  then Pitsunda = GROUP:FindByName("Pitsunda - Cargo Ship")
+  else
+end
+
 Pitsunda1 = ZONE:FindByName("Pitsunda1")
 Pitsunda2 = ZONE:FindByName("Pitsunda2")
 Pitsunda3 = ZONE:FindByName("Pitsunda3")
 Pitsunda4 = ZONE:FindByName("Pitsunda4")
 
-if Pitsunda:IsAlive() then Pitsunda:TaskRouteToZone(Pitsunda1, false, 5) end -- send group to fist zone and start loop
+if Group.getByName("Pitsunda - Cargo Ship") then Pitsunda:TaskRouteToZone(Pitsunda1, false, 5) end -- send group to fist zone and start loop
 
 function SEF_Pitsunda()
-  if Pitsunda:IsAlive() then 
+  if Group.getByName("Pitsunda - Cargo Ship") then 
     if Pitsunda:IsPartlyOrCompletelyInZone(Pitsunda1)
       then 
         Pitsunda:ClearTasks()
@@ -306,14 +350,18 @@ end
 -- Lazarevskoe - Cargo Ship --
 -- ======================== --
 
-Lazarevskoe = GROUP:FindByName("Lazarevskoe - Cargo Ship")
+if Group.getByName("Lazarevskoe - Cargo Ship")
+  then Lazarevskoe = GROUP:FindByName("Lazarevskoe - Cargo Ship")
+  else
+end
+
 Lazarevskoe1 = ZONE:FindByName("Lazarevskoe1")
 Lazarevskoe2 = ZONE:FindByName("Lazarevskoe2")
 
-if Lazarevskoe:IsAlive() then Lazarevskoe:TaskRouteToZone(Lazarevskoe1, false, 5) end -- send group to fist zone and start loop
+if Group.getByName("Lazarevskoe - Cargo Ship") then Lazarevskoe:TaskRouteToZone(Lazarevskoe1, false, 5) end -- send group to fist zone and start loop
 
 function SEF_Lazarevskoe()
-  if Lazarevskoe:IsAlive()then  
+  if Group.getByName("Lazarevskoe - Cargo Ship") then  
     if Lazarevskoe:IsPartlyOrCompletelyInZone(Lazarevskoe1)
       then 
         Lazarevskoe:ClearTasks()

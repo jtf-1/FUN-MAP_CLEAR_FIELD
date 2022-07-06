@@ -4878,7 +4878,7 @@ function SEF_USAFAWACS_SPAWN()
 		local WP2X = OrbitZone2Vec2.x
 		local WP2Y = OrbitZone2Vec2.y		
 		
-		USAFAWACS = SPAWN:NewWithAlias("Plane Template", "USAF AWACS"):InitRandomizeTemplate( { "USAF AWACS" } )	
+		USAFAWACS = SPAWN:NewWithAlias("Plane Template", "blueEWR USAF AWACS"):InitRandomizeTemplate( { "USAF AWACS" } )	
 					
 			:OnSpawnGroup(
 				function( SpawnGroup )								
@@ -5110,7 +5110,7 @@ function SEF_USAFAWACS_SPAWN()
 		local WP2X = OrbitZone2Vec2.x
 		local WP2Y = OrbitZone2Vec2.y
 		
-		USAFAWACS = SPAWN:NewWithAlias("Plane Template", "USAF AWACS"):InitRandomizeTemplate( { "USAF AWACS" } )
+		USAFAWACS = SPAWN:NewWithAlias("Plane Template", "blueEWR USAF AWACS"):InitRandomizeTemplate( { "USAF AWACS" } )
 			
 			:OnSpawnGroup(
 				function( SpawnGroup )								
